@@ -1,0 +1,27 @@
+nav{
+    div{
+        h1{
+            color: rgb(160, 206, 141) !important;     
+        }
+    }
+    ul{
+        
+        li{
+            
+            a{
+               &:hover{
+                  background-color: linear-gradient(45deg,  rgb(181, 233, 158)) !important;
+                  transform: scale(1.2,1.2);
+                  color:rgb(153, 155, 32) !important; 
+               }             
+            }
+        }
+    }
+    div._Logo-Nav{
+        background-image: url(../img/CosyproLogo.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+        height: 64px;
+        width: 128px;    
+    }
+}

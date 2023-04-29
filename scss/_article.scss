@@ -1,0 +1,80 @@
+@mixin cardIMG{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    //width: 100%;
+}
+article.art1{
+    background-image: url(../img/CamiónCargado.jpg);
+    @include cardIMG();
+    margin: 2%;
+    margin-left: 1%;
+}
+article.art2{
+    background-color: rgb(255, 255, 255);
+    height: 600px;
+    margin: 2%;
+    margin-top: 8%;
+}
+article.f1{
+    background-color: chocolate;
+}
+article.f2{
+    background-color: rgb(168, 96, 44);
+}
+article.f3{
+    background-color: rgb(231, 104, 12);
+}
+article{       
+        div._fontParrafo p {
+            font-family: "Dancing Script", cursive;
+            font-family: "Didact Gothic", sans-serif;
+            width: 400px;
+            margin-top: 60px;
+        }
+        div._fontInterbloque { 
+                margin-top: 3%;
+                font-size: 3em;
+                background-color: rgb(181, 233, 158);
+                height: 150px;
+                font-family: "Dancing Script", cursive;
+                font-family: "Didact Gothic", sans-serif;
+            
+        }
+        div._fontParrafo h4 {
+            margin-top: 5px;
+            color: #ab644b;
+        }
+        div {
+            h2{
+                color: rgb(94, 94, 94);
+                margin-left: 1%;
+            }
+            svg{
+                color: rgb(94, 94, 94);
+            }
+        }
+        div.alto{
+            height: 300px;
+        }
+       
+        div._Card-Img1{            
+                @include cardIMG();
+                background-image: url(../img/molde.png);
+                margin-top: 5%;
+                margin-left: 2%;
+        }
+        div._Card-Img2{
+                background-image: url(../img/Torción21.jpg);
+                @include cardIMG();
+                margin: 5%;
+        }
+        div._Card-Img3{
+                background-image: url(../img/25a.jpg);
+                @include cardIMG();  
+                margin-top: 5%;
+                margin-right: 2%;         
+        }
+        
+    
+}

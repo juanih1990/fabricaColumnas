@@ -1,0 +1,151 @@
+@charset "UTF-8";
+nav div h1 {
+  color: rgb(160, 206, 141) !important;
+}
+nav ul li a:hover {
+  background-color: linear-gradient(45deg, rgb(181, 233, 158)) !important;
+  transform: scale(1.2, 1.2);
+  color: rgb(153, 155, 32) !important;
+}
+nav div._Logo-Nav {
+  background-image: url(../img/CosyproLogo.jpg);
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 64px;
+  width: 128px;
+}
+
+header {
+  margin-bottom: 5%;
+}
+header ul {
+  width: 300px;
+}
+header ul li {
+  list-style: none;
+}
+header ul li i.fa-facebook {
+  color: rgb(28, 110, 148);
+}
+header ul li i.fa-instagram {
+  color: rgba(207, 131, 207, 0.808);
+}
+header ul li i.fa-google {
+  color: rgb(211, 134, 103);
+}
+header ul li i {
+  width: 100px;
+  margin-top: 50px;
+  color: blueviolet;
+  font-size: 64px;
+}
+header ul li i:hover {
+  margin-left: 50px;
+}
+header div {
+  width: 150px !important;
+  margin-left: -12%;
+}
+header div h1 {
+  color: aquamarine;
+}
+
+header._cosypro-ImgPrincipal {
+  height: 600px;
+  background-image: url(../img/fabrica.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  margin-left: 10%;
+  margin-right: 5%;
+}
+
+section div {
+  background-color: rgb(255, 255, 255);
+  height: 600px;
+}
+
+article.art1 {
+  background-image: url(../img/CamiónCargado.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  margin: 2%;
+  margin-left: 1%;
+}
+
+article.art2 {
+  background-color: rgb(255, 255, 255);
+  height: 600px;
+  margin: 2%;
+  margin-top: 8%;
+}
+
+article.f1 {
+  background-color: chocolate;
+}
+
+article.f2 {
+  background-color: rgb(168, 96, 44);
+}
+
+article.f3 {
+  background-color: rgb(231, 104, 12);
+}
+
+article div._fontParrafo p {
+  font-family: "Dancing Script", cursive;
+  font-family: "Didact Gothic", sans-serif;
+  width: 400px;
+  margin-top: 60px;
+}
+article div._fontInterbloque {
+  margin-top: 3%;
+  font-size: 3em;
+  background-color: rgb(181, 233, 158);
+  height: 150px;
+  font-family: "Dancing Script", cursive;
+  font-family: "Didact Gothic", sans-serif;
+}
+article div._fontParrafo h4 {
+  margin-top: 5px;
+  color: #ab644b;
+}
+article div h2 {
+  color: rgb(94, 94, 94);
+  margin-left: 1%;
+}
+article div svg {
+  color: rgb(94, 94, 94);
+}
+article div.alto {
+  height: 300px;
+}
+article div._Card-Img1 {
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  background-image: url(../img/molde.png);
+  margin-top: 5%;
+  margin-left: 2%;
+}
+article div._Card-Img2 {
+  background-image: url(../img/Torción21.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  margin: 5%;
+}
+article div._Card-Img3 {
+  background-image: url(../img/25a.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 600px;
+  margin-top: 5%;
+  margin-right: 2%;
+}
+
+footer {
+  height: 100px;
+}
+
+/*# sourceMappingURL=style.css.map */

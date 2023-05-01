@@ -1,12 +1,17 @@
 @media (min-width: 780px){
     header{
-        margin-bottom: 5%;
         div{
             width: 150px !important;
             margin-left: -12%;
             h1{
                 color: aquamarine;
-            }
+            }     
+        }
+        h1._questions-Title{
+            @include _h1Title();
+            color: #000000;
+            margin: $m-50;
+            font-weight: bold;
         }
     }
 }

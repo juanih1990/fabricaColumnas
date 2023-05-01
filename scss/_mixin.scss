@@ -16,3 +16,6 @@
     font-family: 'Dancing Script', cursive;
     font-family: 'Didact Gothic', sans-serif;
 }
+@mixin _h1Title{
+    font-family: $_fontTitle;
+}

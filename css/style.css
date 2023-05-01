@@ -1,4 +1,16 @@
 @charset "UTF-8";
+body div a {
+  margin-top: 1%;
+}
+
+body._contactanos-BG {
+  background: linear-gradient(90deg, rgba(48, 13, 2, 0.9780287115) 22%, rgba(85, 32, 8, 0.9976365546) 58%, rgb(120, 81, 18) 83%);
+}
+
+body._questions-BGcolor {
+  background: linear-gradient(135deg, rgb(211, 231, 214) 50%, rgb(235, 235, 235) 50%);
+}
+
 @media (min-width: 780px) {
   nav div h1 {
     color: rgb(160, 206, 141) !important;
@@ -27,15 +39,18 @@
   }
 }
 @media (min-width: 780px) {
-  header {
-    margin-bottom: 5%;
-  }
   header div {
     width: 150px !important;
     margin-left: -12%;
   }
   header div h1 {
     color: aquamarine;
+  }
+  header h1._questions-Title {
+    font-family: "Dancing Script", cursive;
+    color: #000000;
+    margin: 50px;
+    font-weight: bold;
   }
 }
 @media (max-width: 780px) {
@@ -51,10 +66,6 @@
   }
 }
 @media (min-width: 780px) {
-  section div {
-    background-color: rgb(255, 255, 255);
-    height: 600px;
-  }
   section div._Card-Img1 {
     background-size: cover;
     background-repeat: no-repeat;
@@ -78,11 +89,22 @@
     margin-top: 5%;
     margin-right: 2%;
   }
+  section iframe {
+    margin-top: 2%;
+  }
+  section._contactanos-Contenedor {
+    height: 100vh;
+  }
+  section._heightContactanos {
+    height: 100vh;
+  }
+  div h6 {
+    margin-left: 5%;
+    font-family: "Dancing Script", cursive;
+    font-family: "Didact Gothic", sans-serif;
+  }
 }
 @media (max-width: 780px) {
-  section div {
-    background-color: rgb(255, 255, 255);
-  }
   section div._Card-Img1 {
     background-size: contain;
     background-repeat: no-repeat;
@@ -102,6 +124,12 @@
     background-repeat: no-repeat;
     height: 88vh;
   }
+  section._contactanos-Contenedor {
+    height: 95vh;
+  }
+  section._heightContactanos {
+    height: 95vh;
+  }
 }
 @media (min-width: 780px) {
   article.art1 {
@@ -114,7 +142,7 @@
   }
   article.art2 {
     background-color: rgb(255, 255, 255);
-    height: 600px;
+    height: 400px;
     margin: 2%;
     margin-top: 8%;
   }
@@ -169,6 +197,18 @@
   }
   article div.alto {
     height: 300px;
+  }
+  article div._questions-MarginTop {
+    margin-top: 15%;
+  }
+  article div._questions-MarginTop svg {
+    color: white;
+    background-color: rgb(158, 214, 158);
+    border-radius: 20px;
+  }
+  article div h3 {
+    font-family: "Dancing Script", cursive;
+    font-family: "Didact Gothic", sans-serif;
   }
   article._cosypro-ImgPrincipal {
     height: 600px;
@@ -287,6 +327,54 @@
   footer div p {
     font-family: "Didact Gothic", sans-serif;
     font-size: 0.29em;
+  }
+}
+@media (min-width: 780px) {
+  main._contactanos-IMG {
+    height: 70vh;
+    background-image: url(../img/empleado.png);
+    background-size: cover;
+  }
+  main._height {
+    height: 100vh;
+  }
+}
+@media (max-width: 780px) {
+  main._contactanos-IMG {
+    background-image: url(../img/empleado.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 40vh;
+  }
+  main._height {
+    height: 100vh;
+  }
+}
+@media (min-width: 780px) {
+  aside {
+    background-color: rgb(248, 248, 248);
+    height: 70vh;
+  }
+  aside h1 {
+    font-family: "Dancing Script", cursive;
+  }
+  aside h1.m-top5 {
+    margin-top: 5%;
+  }
+  aside div.m-top10 {
+    margin-top: 10%;
+  }
+}
+@media (max-width: 780px) {
+  aside {
+    background-color: rgb(248, 248, 248);
+    height: 90vh;
+  }
+  aside h1 {
+    font-family: "Dancing Script", cursive;
+  }
+  aside h1.m-top5 {
+    margin-top: 10%;
   }
 }
 

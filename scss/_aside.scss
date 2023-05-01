@@ -1,0 +1,27 @@
+@media (min-width: 780px){
+    aside{
+        background-color: $_BGColorFondo;
+        height: 70vh; 
+        h1{
+            font-family:  $_fontTitle;
+        }
+        h1.m-top5{
+            margin-top: 5%;
+        }
+        div.m-top10{
+            margin-top: $mt-10porciento;
+        }  
+    }
+}
+@media (max-width: 780px){
+    aside{
+        background-color: $_BGColorFondo;
+        height: 90vh; 
+        h1{
+            font-family:  $_fontTitle;
+        }
+        h1.m-top5{
+            margin-top: $mt-10porciento;
+        }
+    }
+}

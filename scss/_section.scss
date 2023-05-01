@@ -1,9 +1,5 @@
 @media (min-width: 780px){
     section{   
-        div{
-            background-color: rgb(255, 255, 255);
-            height: 600px;
-        }
         div._Card-Img1{            
             @include  cardIMG-desktop();
             background-image: url(../img/molde.png);
@@ -21,14 +17,26 @@
             margin-top: 5%;
             margin-right: 2%;         
          }
-    
+         iframe{
+            margin-top: 2%;
+         }
     }
+    section._contactanos-Contenedor{
+        height:100vh;
+   }
+   section._heightContactanos{
+        height: 100vh;
+    }
+    div{
+        h6{
+            margin-left: 5%;
+            font-family: $_fontTitle;
+            font-family: $_font-Sans-serif;
+        }
+    }   
 }
 @media (max-width: 780px){
     section{   
-        div{
-            background-color: rgb(255, 255, 255);
-        }
         div._Card-Img1{            
             @include  cardIMG-mobie();
             background-image: url(../img/molde.png);
@@ -43,5 +51,11 @@
             @include  cardIMG-mobie();     
          }
     
+    }
+    section._contactanos-Contenedor{
+        height:95vh;
+    }
+    section._heightContactanos{
+        height: 95vh;
     }
 }

@@ -7,7 +7,7 @@
     }
     article.art2{
         background-color: rgb(255, 255, 255);
-        height: 600px;
+        height: 400px;
         margin: 2%;
         margin-top: 8%;
     }
@@ -66,6 +66,18 @@
             }
             div.alto{
                 height: 300px;
+            }
+            div._questions-MarginTop{
+                margin-top: $mt-15porciento;
+            }
+            div._questions-MarginTop svg{
+                color: white;
+                background-color: rgb(158, 214, 158);
+                border-radius: 20px;
+            }
+            div h3{
+                font-family: $_fontTitle;
+                font-family: $_font-Sans-serif;
             }
     
     }

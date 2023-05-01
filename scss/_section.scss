@@ -40,15 +40,19 @@
         div._Card-Img1{            
             @include  cardIMG-mobie();
             background-image: url(../img/molde.png);
+          
         }
         div._Card-Img2{
                     background-image: url(../img/Torción21.png);
                     @include  cardIMG-mobie();
-                    margin-bottom: 15%;
+                    margin: 10% 0%;
+                   
         }
          div._Card-Img3{
             background-image: url(../img/25a.png);
-            @include  cardIMG-mobie();     
+            @include  cardIMG-mobie();  
+            margin-bottom: 10%;
+              
          }
     
     }
@@ -58,4 +62,11 @@
     section._heightContactanos{
         height: 95vh;
     }
+    div{
+        h6{
+            margin-left: 5%;
+            font-family: $_fontTitle;
+            font-family: $_font-Sans-serif;
+        }
+    } 
 }

@@ -165,14 +165,26 @@
     
     }
     article._cosypro-ImgPrincipal{
-        height: 600px;
+        height: 200px;
         background-image: url(../img/fabrica.png);
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
     }
     article.redes{
         display: hidden;
         opacity: 0;
         height: 0px;
+    }
+    div._questions-MarginTop{
+        margin-top: $mt-15porciento;
+    }
+    div._questions-MarginTop svg{
+        color: white;
+        background-color: rgb(158, 214, 158);
+        border-radius: 20px;
+    }
+    div h3{
+        font-family: $_fontTitle;
+        font-family: $_font-Sans-serif;
     }
 }

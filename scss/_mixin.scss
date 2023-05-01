@@ -4,9 +4,9 @@
     height: 600px;
 }
 @mixin cardIMG-mobie{
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    height:88vh;
+    height: 500px;
 }
 @mixin __interBloqueS{
     color: rgb(63, 47, 12);;

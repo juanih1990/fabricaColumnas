@@ -54,15 +54,18 @@ body._questions-BGcolor {
   }
 }
 @media (max-width: 780px) {
-  header {
-    height: 200px;
-  }
   header div {
     width: 150px !important;
     margin-left: -12%;
   }
   header div h1 {
     color: aquamarine;
+  }
+  header h1._questions-Title {
+    font-family: "Dancing Script", cursive;
+    color: #000000;
+    margin-top: 30px;
+    font-weight: bold;
   }
 }
 @media (min-width: 780px) {
@@ -106,29 +109,35 @@ body._questions-BGcolor {
 }
 @media (max-width: 780px) {
   section div._Card-Img1 {
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 88vh;
+    height: 500px;
     background-image: url(../img/molde.png);
   }
   section div._Card-Img2 {
     background-image: url(../img/Torción21.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 88vh;
-    margin-bottom: 15%;
+    height: 500px;
+    margin: 10% 0%;
   }
   section div._Card-Img3 {
     background-image: url(../img/25a.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 88vh;
+    height: 500px;
+    margin-bottom: 10%;
   }
   section._contactanos-Contenedor {
     height: 95vh;
   }
   section._heightContactanos {
     height: 95vh;
+  }
+  div h6 {
+    margin-left: 5%;
+    font-family: "Dancing Script", cursive;
+    font-family: "Didact Gothic", sans-serif;
   }
 }
 @media (min-width: 780px) {
@@ -220,9 +229,9 @@ body._questions-BGcolor {
 @media (max-width: 780px) {
   article.art1 {
     background-image: url(../img/CamiónCargado.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
-    height: 88vh;
+    height: 500px;
     height: 250px;
   }
   article.art2 {
@@ -289,15 +298,27 @@ body._questions-BGcolor {
     height: 300px;
   }
   article._cosypro-ImgPrincipal {
-    height: 600px;
+    height: 200px;
     background-image: url(../img/fabrica.png);
-    background-size: contain;
+    background-size: cover;
     background-repeat: no-repeat;
   }
   article.redes {
     display: hidden;
     opacity: 0;
     height: 0px;
+  }
+  div._questions-MarginTop {
+    margin-top: 15%;
+  }
+  div._questions-MarginTop svg {
+    color: white;
+    background-color: rgb(158, 214, 158);
+    border-radius: 20px;
+  }
+  div h3 {
+    font-family: "Dancing Script", cursive;
+    font-family: "Didact Gothic", sans-serif;
   }
 }
 @media (min-width: 780px) {

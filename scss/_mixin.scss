@@ -1,0 +1,18 @@
+@mixin cardIMG-desktop{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+}
+@mixin cardIMG-mobie{
+    background-size: contain;
+    background-repeat: no-repeat;
+    height:88vh;
+}
+@mixin __interBloqueS{
+    color: rgb(63, 47, 12);;
+    font-size: 3em;
+    background-color: rgb(137, 180, 118);
+    height: 150px;
+    font-family: 'Dancing Script', cursive;
+    font-family: 'Didact Gothic', sans-serif;
+}

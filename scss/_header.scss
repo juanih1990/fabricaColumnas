@@ -1,42 +1,26 @@
-header{
-    margin-bottom: 5%;
-    ul{
-        width: 300px;
-        li{
-            list-style: none;
-        }
-    }
-    ul li i.fa-facebook{
-          color: rgb(28, 110, 148);
-    }
-    ul li i.fa-instagram{
-          color: rgba(207, 131, 207, 0.808);
-    }
-    ul li i.fa-google{
-        color: rgb(211, 134, 103);
-    }
-    ul li i{
-        width: 100px;
-        margin-top: 50px;
-        color: blueviolet;
-        font-size: 64px;
-        &:hover{
-             margin-left: 50px;
-        }
-    }
-    div{
-        width: 150px !important;
-        margin-left: -12%;
-        h1{
-            color: aquamarine;
+@media (min-width: 780px){
+    header{
+        margin-bottom: 5%;
+        div{
+            width: 150px !important;
+            margin-left: -12%;
+            h1{
+                color: aquamarine;
+            }
         }
     }
 }
-header._cosypro-ImgPrincipal{
-    height: 600px;
-    background-image: url(../img/fabrica.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    margin-left: 10%;
-    margin-right: 5%;
+
+@media (max-width: 780px){
+   header{
+    height: 200px;
+        div{
+            width: 150px !important;
+            margin-left: -12%;
+            h1{
+                color: aquamarine;
+            }
+        }
+    }
 }
+

@@ -1,151 +1,293 @@
 @charset "UTF-8";
-nav div h1 {
-  color: rgb(160, 206, 141) !important;
+@media (min-width: 780px) {
+  nav div h1 {
+    color: rgb(160, 206, 141) !important;
+  }
+  nav ul li a:hover {
+    background-color: linear-gradient(45deg, rgb(181, 233, 158)) !important;
+    transform: scale(1.2, 1.2);
+    color: rgb(153, 155, 32) !important;
+  }
+  nav div._Logo-Nav {
+    background-image: url(../img/CosyproLogo.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 64px;
+    width: 128px;
+  }
 }
-nav ul li a:hover {
-  background-color: linear-gradient(45deg, rgb(181, 233, 158)) !important;
-  transform: scale(1.2, 1.2);
-  color: rgb(153, 155, 32) !important;
+@media (max-width: 780px) {
+  nav div h1 {
+    color: rgb(160, 206, 141) !important;
+  }
+  nav ul li a:hover {
+    background-color: linear-gradient(45deg, rgb(181, 233, 158)) !important;
+    transform: scale(1.2, 1.2);
+    color: rgb(153, 155, 32) !important;
+  }
 }
-nav div._Logo-Nav {
-  background-image: url(../img/CosyproLogo.jpg);
-  background-size: contain;
-  background-repeat: no-repeat;
-  height: 64px;
-  width: 128px;
+@media (min-width: 780px) {
+  header {
+    margin-bottom: 5%;
+  }
+  header div {
+    width: 150px !important;
+    margin-left: -12%;
+  }
+  header div h1 {
+    color: aquamarine;
+  }
 }
-
-header {
-  margin-bottom: 5%;
+@media (max-width: 780px) {
+  header {
+    height: 200px;
+  }
+  header div {
+    width: 150px !important;
+    margin-left: -12%;
+  }
+  header div h1 {
+    color: aquamarine;
+  }
 }
-header ul {
-  width: 300px;
+@media (min-width: 780px) {
+  section div {
+    background-color: rgb(255, 255, 255);
+    height: 600px;
+  }
+  section div._Card-Img1 {
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    background-image: url(../img/molde.png);
+    margin-top: 5%;
+    margin-left: 2%;
+  }
+  section div._Card-Img2 {
+    background-image: url(../img/Torción21.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    margin: 5%;
+  }
+  section div._Card-Img3 {
+    background-image: url(../img/25a.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    margin-top: 5%;
+    margin-right: 2%;
+  }
 }
-header ul li {
-  list-style: none;
+@media (max-width: 780px) {
+  section div {
+    background-color: rgb(255, 255, 255);
+  }
+  section div._Card-Img1 {
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 88vh;
+    background-image: url(../img/molde.png);
+  }
+  section div._Card-Img2 {
+    background-image: url(../img/Torción21.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 88vh;
+    margin-bottom: 15%;
+  }
+  section div._Card-Img3 {
+    background-image: url(../img/25a.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 88vh;
+  }
 }
-header ul li i.fa-facebook {
-  color: rgb(28, 110, 148);
+@media (min-width: 780px) {
+  article.art1 {
+    background-image: url(../img/CamiónCargado.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    margin: 2%;
+    margin-left: 1%;
+  }
+  article.art2 {
+    background-color: rgb(255, 255, 255);
+    height: 600px;
+    margin: 2%;
+    margin-top: 8%;
+  }
+  article ul {
+    width: 300px;
+  }
+  article ul li {
+    list-style: none;
+  }
+  article ul li i.fa-facebook {
+    color: rgb(28, 110, 148);
+  }
+  article ul li i.fa-instagram {
+    color: rgba(207, 131, 207, 0.808);
+  }
+  article ul li i.fa-google {
+    color: rgb(211, 134, 103);
+  }
+  article ul li i {
+    width: 100px;
+    margin-top: 50px;
+    color: blueviolet;
+    font-size: 64px;
+  }
+  article ul li i:hover {
+    margin-left: 50px;
+  }
+  article div._fontParrafo p {
+    font-family: "Dancing Script", cursive;
+    font-family: "Didact Gothic", sans-serif;
+    width: 600px;
+    margin-top: 60px;
+  }
+  article div._fontInterbloque {
+    margin-top: 3%;
+    font-size: 3em;
+    background-color: rgb(181, 233, 158);
+    height: 150px;
+    font-family: "Dancing Script", cursive;
+    font-family: "Didact Gothic", sans-serif;
+  }
+  article div._fontParrafo h4 {
+    margin-top: 5px;
+    color: #ab644b;
+  }
+  article div h2 {
+    color: rgb(94, 94, 94);
+    margin-left: 1%;
+  }
+  article div svg {
+    color: rgb(94, 94, 94);
+  }
+  article div.alto {
+    height: 300px;
+  }
+  article._cosypro-ImgPrincipal {
+    height: 600px;
+    background-image: url(../img/fabrica.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
-header ul li i.fa-instagram {
-  color: rgba(207, 131, 207, 0.808);
+@media (max-width: 780px) {
+  article.art1 {
+    background-image: url(../img/CamiónCargado.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    height: 88vh;
+    height: 250px;
+  }
+  article.art2 {
+    background-color: rgb(255, 255, 255);
+  }
+  article ul {
+    width: 300px;
+  }
+  article ul li {
+    list-style: none;
+  }
+  article ul li i.fa-facebook {
+    color: rgb(28, 110, 148);
+  }
+  article ul li i.fa-instagram {
+    color: rgba(207, 131, 207, 0.808);
+  }
+  article ul li i.fa-google {
+    color: rgb(211, 134, 103);
+  }
+  article ul li i {
+    width: 100px;
+    margin-top: 50px;
+    color: blueviolet;
+    font-size: 64px;
+  }
+  article ul li i:hover {
+    margin-left: 50px;
+  }
+  article div._fontParrafo p {
+    font-family: "Dancing Script", cursive;
+    font-family: "Didact Gothic", sans-serif;
+    width: 96vw;
+    margin-top: 10px;
+  }
+  article div._fontInterbloque {
+    margin-top: 1%;
+    font-size: 3em;
+    background-color: rgb(181, 233, 158);
+    height: 150px;
+    font-family: "Dancing Script", cursive;
+    font-family: "Didact Gothic", sans-serif;
+    margin-top: 10%;
+    margin-bottom: 10%;
+  }
+  article div._fontParrafo p span {
+    font-size: 1.2em;
+    color: #ab644b;
+  }
+  article div._fontParrafo h4 {
+    display: none;
+    opacity: 0;
+    margin-top: 1px;
+    color: #ab644b;
+  }
+  article div h2 {
+    color: rgb(94, 94, 94);
+    margin-left: 1%;
+  }
+  article div svg {
+    color: rgb(94, 94, 94);
+  }
+  article div.alto {
+    height: 300px;
+  }
+  article._cosypro-ImgPrincipal {
+    height: 600px;
+    background-image: url(../img/fabrica.jpg);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  article.redes {
+    display: hidden;
+    opacity: 0;
+    height: 0px;
+  }
 }
-header ul li i.fa-google {
-  color: rgb(211, 134, 103);
+@media (min-width: 780px) {
+  footer {
+    color: rgb(63, 47, 12);
+    font-size: 3em;
+    background-color: rgb(137, 180, 118);
+    height: 150px;
+    font-family: "Dancing Script", cursive;
+    font-family: "Didact Gothic", sans-serif;
+  }
+  footer div p {
+    font-family: "Didact Gothic", sans-serif;
+    font-size: 0.29em;
+  }
 }
-header ul li i {
-  width: 100px;
-  margin-top: 50px;
-  color: blueviolet;
-  font-size: 64px;
-}
-header ul li i:hover {
-  margin-left: 50px;
-}
-header div {
-  width: 150px !important;
-  margin-left: -12%;
-}
-header div h1 {
-  color: aquamarine;
-}
-
-header._cosypro-ImgPrincipal {
-  height: 600px;
-  background-image: url(../img/fabrica.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  margin-left: 10%;
-  margin-right: 5%;
-}
-
-section div {
-  background-color: rgb(255, 255, 255);
-  height: 600px;
-}
-
-article.art1 {
-  background-image: url(../img/CamiónCargado.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 600px;
-  margin: 2%;
-  margin-left: 1%;
-}
-
-article.art2 {
-  background-color: rgb(255, 255, 255);
-  height: 600px;
-  margin: 2%;
-  margin-top: 8%;
-}
-
-article.f1 {
-  background-color: chocolate;
-}
-
-article.f2 {
-  background-color: rgb(168, 96, 44);
-}
-
-article.f3 {
-  background-color: rgb(231, 104, 12);
-}
-
-article div._fontParrafo p {
-  font-family: "Dancing Script", cursive;
-  font-family: "Didact Gothic", sans-serif;
-  width: 400px;
-  margin-top: 60px;
-}
-article div._fontInterbloque {
-  margin-top: 3%;
-  font-size: 3em;
-  background-color: rgb(181, 233, 158);
-  height: 150px;
-  font-family: "Dancing Script", cursive;
-  font-family: "Didact Gothic", sans-serif;
-}
-article div._fontParrafo h4 {
-  margin-top: 5px;
-  color: #ab644b;
-}
-article div h2 {
-  color: rgb(94, 94, 94);
-  margin-left: 1%;
-}
-article div svg {
-  color: rgb(94, 94, 94);
-}
-article div.alto {
-  height: 300px;
-}
-article div._Card-Img1 {
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 600px;
-  background-image: url(../img/molde.png);
-  margin-top: 5%;
-  margin-left: 2%;
-}
-article div._Card-Img2 {
-  background-image: url(../img/Torción21.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 600px;
-  margin: 5%;
-}
-article div._Card-Img3 {
-  background-image: url(../img/25a.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  height: 600px;
-  margin-top: 5%;
-  margin-right: 2%;
-}
-
-footer {
-  height: 100px;
+@media (max-width: 780px) {
+  footer {
+    color: rgb(63, 47, 12);
+    font-size: 3em;
+    background-color: rgb(137, 180, 118);
+    height: 150px;
+    font-family: "Dancing Script", cursive;
+    font-family: "Didact Gothic", sans-serif;
+    height: 100vh;
+  }
+  footer div p {
+    font-family: "Didact Gothic", sans-serif;
+    font-size: 0.29em;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */

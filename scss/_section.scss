@@ -1,6 +1,47 @@
-section{
-    div{
-        background-color: rgb(255, 255, 255);
-        height: 600px;
+@media (min-width: 780px){
+    section{   
+        div{
+            background-color: rgb(255, 255, 255);
+            height: 600px;
+        }
+        div._Card-Img1{            
+            @include  cardIMG-desktop();
+            background-image: url(../img/molde.png);
+            margin-top: 5%;
+            margin-left: 2%;
+        }
+        div._Card-Img2{
+                    background-image: url(../img/Torción21.jpg);
+                    @include  cardIMG-desktop();
+                    margin: 5%;
+        }
+         div._Card-Img3{
+            background-image: url(../img/25a.jpg);
+            @include  cardIMG-desktop();  
+            margin-top: 5%;
+            margin-right: 2%;         
+         }
+    
+    }
+}
+@media (max-width: 780px){
+    section{   
+        div{
+            background-color: rgb(255, 255, 255);
+        }
+        div._Card-Img1{            
+            @include  cardIMG-mobie();
+            background-image: url(../img/molde.png);
+        }
+        div._Card-Img2{
+                    background-image: url(../img/Torción21.jpg);
+                    @include  cardIMG-mobie();
+                    margin-bottom: 15%;
+        }
+         div._Card-Img3{
+            background-image: url(../img/25a.jpg);
+            @include  cardIMG-mobie();     
+         }
+    
     }
 }

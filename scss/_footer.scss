@@ -1,3 +1,23 @@
-footer{
-       height: 100px;
-}
+@media (min-width: 780px){
+       footer{
+           @include __interBloqueS();
+               div{
+                   p{
+                       font-family: "Didact Gothic", sans-serif;
+                       font-size: .29em;
+                   }
+               }
+       }
+   }
+   @media (max-width: 780px){
+       footer{
+           @include __interBloqueS();
+           height: 100vh;
+               div{
+                   p{
+                       font-family: "Didact Gothic", sans-serif;
+                       font-size: .29em;
+                   }
+               }
+       }
+   }

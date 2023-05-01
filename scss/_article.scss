@@ -1,80 +1,166 @@
-@mixin cardIMG{
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 600px;
-    //width: 100%;
-}
-article.art1{
-    background-image: url(../img/CamiónCargado.jpg);
-    @include cardIMG();
-    margin: 2%;
-    margin-left: 1%;
-}
-article.art2{
-    background-color: rgb(255, 255, 255);
-    height: 600px;
-    margin: 2%;
-    margin-top: 8%;
-}
-article.f1{
-    background-color: chocolate;
-}
-article.f2{
-    background-color: rgb(168, 96, 44);
-}
-article.f3{
-    background-color: rgb(231, 104, 12);
-}
-article{       
-        div._fontParrafo p {
-            font-family: "Dancing Script", cursive;
-            font-family: "Didact Gothic", sans-serif;
-            width: 400px;
-            margin-top: 60px;
-        }
-        div._fontInterbloque { 
-                margin-top: 3%;
-                font-size: 3em;
-                background-color: rgb(181, 233, 158);
-                height: 150px;
+@media (min-width: 780px){
+    article.art1{
+        background-image: url(../img/CamiónCargado.jpg);
+        @include cardIMG-desktop();
+        margin: 2%;
+        margin-left: 1%;
+    }
+    article.art2{
+        background-color: rgb(255, 255, 255);
+        height: 600px;
+        margin: 2%;
+        margin-top: 8%;
+    }
+    article{     
+            ul{
+                width: 300px;
+                li{
+                    list-style: none;
+                }
+            }
+            ul li i.fa-facebook{
+                color: rgb(28, 110, 148);
+            }
+            ul li i.fa-instagram{
+                color: rgba(207, 131, 207, 0.808);
+            }
+            ul li i.fa-google{
+                color: rgb(211, 134, 103);
+            }
+            ul li i{
+                width: 100px;
+                margin-top: 50px;
+                color: blueviolet;
+                font-size: 64px;
+                &:hover{
+                    margin-left: 50px;
+                }
+            }   
+            div._fontParrafo p {
                 font-family: "Dancing Script", cursive;
                 font-family: "Didact Gothic", sans-serif;
-            
-        }
-        div._fontParrafo h4 {
-            margin-top: 5px;
-            color: #ab644b;
-        }
-        div {
-            h2{
-                color: rgb(94, 94, 94);
-                margin-left: 1%;
+                width: 600px;
+                margin-top: 60px;
             }
-            svg{
-                color: rgb(94, 94, 94);
+            div._fontInterbloque { 
+                    margin-top: 3%;
+                    font-size: 3em;
+                    background-color: rgb(181, 233, 158);
+                    height: 150px;
+                    font-family: "Dancing Script", cursive;
+                    font-family: "Didact Gothic", sans-serif;
+                
             }
-        }
-        div.alto{
-            height: 300px;
-        }
-       
-        div._Card-Img1{            
-                @include cardIMG();
-                background-image: url(../img/molde.png);
-                margin-top: 5%;
-                margin-left: 2%;
-        }
-        div._Card-Img2{
-                background-image: url(../img/Torción21.jpg);
-                @include cardIMG();
-                margin: 5%;
-        }
-        div._Card-Img3{
-                background-image: url(../img/25a.jpg);
-                @include cardIMG();  
-                margin-top: 5%;
-                margin-right: 2%;         
-        }
-        
+            div._fontParrafo h4 {
+                margin-top: 5px;
+                color: #ab644b;
+            }
+            div {
+                h2{
+                    color: rgb(94, 94, 94);
+                    margin-left: 1%;
+                }
+                svg{
+                    color: rgb(94, 94, 94);
+                }
+            }
+            div.alto{
+                height: 300px;
+            }
     
+    }
+    article._cosypro-ImgPrincipal{
+        height: 600px;
+        background-image: url(../img/fabrica.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+}
+@media (max-width: 780px){
+    article.art1{
+        background-image: url(../img/CamiónCargado.jpg);
+        @include cardIMG-mobie();
+        height: 250px;
+    }
+    article.art2{
+        background-color: rgb(255, 255, 255);
+       // height: 600px;
+    }
+    article{     
+            ul{
+                width: 300px;
+                li{
+                    list-style: none;
+                }
+            }
+            ul li i.fa-facebook{
+                color: rgb(28, 110, 148);
+            }
+            ul li i.fa-instagram{
+                color: rgba(207, 131, 207, 0.808);
+            }
+            ul li i.fa-google{
+                color: rgb(211, 134, 103);
+            }
+            ul li i{
+                width: 100px;
+                margin-top: 50px;
+                color: blueviolet;
+                font-size: 64px;
+                &:hover{
+                    margin-left: 50px;
+                }
+            }   
+            div._fontParrafo p {
+                font-family: "Dancing Script", cursive;
+                font-family: "Didact Gothic", sans-serif;
+                width: 96vw;
+                margin-top: 10px;
+            }
+            div._fontInterbloque { 
+                    margin-top: 1%;
+                    font-size: 3em;
+                    background-color: rgb(181, 233, 158);
+                    height: 150px;
+                    font-family: "Dancing Script", cursive;
+                    font-family: "Didact Gothic", sans-serif;
+                    margin-top: 10%;
+                    margin-bottom: 10%;
+                
+            }
+            div._fontParrafo p span{
+                font-size: 1.2em;
+                color: #ab644b ;
+            }
+            div._fontParrafo h4 {
+                display: none;
+                opacity: 0;
+                margin-top: 1px;
+                color: #ab644b;
+            }
+            div {
+                h2{
+                    color: rgb(94, 94, 94);
+                    margin-left: 1%;
+                }
+                svg{
+                    color: rgb(94, 94, 94);
+                }
+            }
+            div.alto{
+                height: 300px;
+            }
+    
+    }
+    article._cosypro-ImgPrincipal{
+        height: 600px;
+        background-image: url(../img/fabrica.jpg);
+        background-size: contain;
+        background-repeat: no-repeat;
+    }
+    article.redes{
+        display: hidden;
+        opacity: 0;
+        height: 0px;
+    }
 }

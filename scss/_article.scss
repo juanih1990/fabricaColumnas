@@ -1,6 +1,6 @@
 @media (min-width: 780px){
     article.art1{
-        background-image: url(../img/CamiónCargado.jpg);
+        background-image: url(../img/CamiónCargado.png);
         @include cardIMG-desktop();
         margin: 2%;
         margin-left: 1%;
@@ -71,14 +71,14 @@
     }
     article._cosypro-ImgPrincipal{
         height: 600px;
-        background-image: url(../img/fabrica.jpg);
+        background-image: url(../img/fabrica.png);
         background-size: cover;
         background-repeat: no-repeat;
     }
 }
 @media (max-width: 780px){
     article.art1{
-        background-image: url(../img/CamiónCargado.jpg);
+        background-image: url(../img/CamiónCargado.png);
         @include cardIMG-mobie();
         height: 250px;
     }
@@ -154,7 +154,7 @@
     }
     article._cosypro-ImgPrincipal{
         height: 600px;
-        background-image: url(../img/fabrica.jpg);
+        background-image: url(../img/fabrica.png);
         background-size: contain;
         background-repeat: no-repeat;
     }

@@ -7,6 +7,13 @@
                        font-size: .29em;
                    }
                }
+               a{
+                 text-decoration: none;
+                 color: rgb(212, 211, 211);
+               }
+               a:hover{
+                color: beige;
+               }
        }
    }
    @media (max-width: 780px){

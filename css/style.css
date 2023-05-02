@@ -323,7 +323,7 @@ body._questions-BGcolor {
 }
 @media (min-width: 780px) {
   footer {
-    color: rgb(63, 47, 12);
+    color: rgb(71, 71, 71);
     font-size: 3em;
     background-color: rgb(137, 180, 118);
     height: 150px;
@@ -334,10 +334,17 @@ body._questions-BGcolor {
     font-family: "Didact Gothic", sans-serif;
     font-size: 0.29em;
   }
+  footer a {
+    text-decoration: none;
+    color: rgb(212, 211, 211);
+  }
+  footer a:hover {
+    color: beige;
+  }
 }
 @media (max-width: 780px) {
   footer {
-    color: rgb(63, 47, 12);
+    color: rgb(71, 71, 71);
     font-size: 3em;
     background-color: rgb(137, 180, 118);
     height: 150px;

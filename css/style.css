@@ -4,7 +4,7 @@ body div a {
 }
 
 body._contactanos-BG {
-  background: linear-gradient(90deg, rgba(48, 13, 2, 0.9780287115) 22%, rgba(85, 32, 8, 0.9976365546) 58%, rgb(120, 81, 18) 83%);
+  background: linear-gradient(135deg, rgb(211, 231, 214) 50%, rgb(235, 235, 235) 50%);
 }
 
 body._questions-BGcolor {
@@ -362,6 +362,7 @@ body._questions-BGcolor {
     height: 70vh;
     background-image: url(../img/empleado.png);
     background-size: cover;
+    filter: brightness(2);
   }
   main._height {
     height: 100vh;

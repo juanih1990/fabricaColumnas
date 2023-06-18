@@ -8,6 +8,12 @@
     main._height{
         height: 100vh;
     }    
+    main._producto-banner{
+        height: 600px;
+        background-image: url(../img/1.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;   
+    }
 }
 @media (max-width: 780px){
     main._contactanos-IMG{

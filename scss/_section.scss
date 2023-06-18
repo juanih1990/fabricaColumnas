@@ -33,7 +33,15 @@
             font-family: $_fontTitle;
             font-family: $_font-Sans-serif;
         }
-    }   
+    } 
+    section._producto-interbloque{
+        background-color: rgb(247, 247, 247);
+        height: 150px;
+    } 
+    section._producto-cards{
+        background-color: rgb(181, 233, 158);
+        height: 450px;
+    } 
 }
 @media (max-width: 780px){
     section{   

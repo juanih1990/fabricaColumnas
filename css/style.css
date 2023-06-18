@@ -106,6 +106,14 @@ body._questions-BGcolor {
     font-family: "Dancing Script", cursive;
     font-family: "Didact Gothic", sans-serif;
   }
+  section._producto-interbloque {
+    background-color: rgb(247, 247, 247);
+    height: 150px;
+  }
+  section._producto-cards {
+    background-color: rgb(181, 233, 158);
+    height: 450px;
+  }
 }
 @media (max-width: 780px) {
   section div._Card-Img1 {
@@ -154,6 +162,13 @@ body._questions-BGcolor {
     height: 400px;
     margin: 2%;
     margin-top: 8%;
+  }
+  article._producto-columna {
+    background-image: url(../img/CamiónCargado.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 600px;
+    height: 350px;
   }
   article ul {
     width: 300px;
@@ -366,6 +381,12 @@ body._questions-BGcolor {
   }
   main._height {
     height: 100vh;
+  }
+  main._producto-banner {
+    height: 600px;
+    background-image: url(../img/1.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
   }
 }
 @media (max-width: 780px) {

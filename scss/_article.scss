@@ -11,6 +11,11 @@
         margin: 2%;
         margin-top: 8%;
     }
+    article._producto-columna{
+        background-image: url(../img/CamiónCargado.png);
+        @include cardIMG-desktop();
+        height: 350px;
+    }
     article{     
             ul{
                 width: 300px;
@@ -79,6 +84,7 @@
                 font-family: $_fontTitle;
                 font-family: $_font-Sans-serif;
             }
+
     
     }
     article._cosypro-ImgPrincipal{

@@ -5,6 +5,7 @@ const templatepresupuesto = document.getElementById('t-presupuesto').content
 const templateFooterPresupuesto = document.getElementById('t-presupuestoFooter').content
 const items =  document.getElementById('items')
 const footer = document.getElementById('footer')
+const enviarPresupuesto = document.getElementById('enviar')
 const presupuesto = document.getElementById('presupuesto')
 const fragment = document.createDocumentFragment()
 const productos = []
@@ -30,7 +31,7 @@ const pintCards = data => {
     });
     productos.forEach(producto => {
         templateCards.querySelector('h5').textContent = producto.title
-        templateCards.querySelector('p').textContent = producto.precio
+        templateCards.querySelector('span').textContent = producto.precio
         templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
         templateCards.querySelector('.btn-dark').dataset.id = producto.id
         const clone = templateCards.cloneNode(true)
@@ -49,8 +50,31 @@ presupuesto.addEventListener('click',e => {
 footer.addEventListener('click',e => {
     btnVaciarCarrito(e)
 })
+enviarPresupuesto.addEventListener('click',e =>{
+    if(e.target.classList.contains('round')){
+        enviarPresupuesto.classList.replace("round","hidden")
+    }
+    else{
+        e.target.classList.toggle("round")
+        e.target.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" class="bi bi-check-circle-fill" viewBox="0 0 16 16" style="background : green">
+        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-3.97-3.03a.75.75 0 0 0-1.08.022L7.477 9.417 5.384 7.323a.75.75 0 0 0-1.06 1.06L6.97 11.03a.75.75 0 0 0 1.079-.02l3.992-4.99a.75.75 0 0 0-.01-1.05z"/>
+        </svg>`
+        carrito.splice(0,carrito.length)
+        pintarCarrito(carrito)
+        pintarFooter(carrito)
+        footer.innerHTML = ` <tr id="footer">
+        <th scope="row" colspan="5">Enviamos tu pedido, nuestros encargados de ventas se pondran en contacto.</th>
+      </tr>`
+      
+    }
+})
 const agregarCarrito = e =>{
     if(e.target.classList.contains('btn-dark')){
+        if(enviarPresupuesto.classList.contains("round") || enviarPresupuesto.classList.contains("hidden")){
+            enviarPresupuesto.classList.replace("round","normal")
+            enviarPresupuesto.classList.replace("hidden","normal")
+            enviarPresupuesto.innerHTML = "ENVIAR"
+        }
          let objeto = e.target.parentElement
          let ids = objeto.querySelector('.btn-dark').dataset.id
          if(carrito.find(ele => ele.id == ids)){
@@ -67,9 +91,10 @@ const agregarCarrito = e =>{
                 }
             )
          }
+         pintarCarrito(carrito)
+         pintarFooter(carrito) 
     }
-    pintarCarrito(carrito)
-    pintarFooter(carrito) 
+    
     e.stopPropagation()
 }
 const pintarCarrito = carrito => {
@@ -109,10 +134,6 @@ const btnaccion = e => {
            }
            else{
               carrito.splice(position,1)
-              footer.innerHTML = ` <tr id="footer">
-                <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-              </tr>`
-              return
            }
            const clone = templatepresupuesto.cloneNode(true)
            fragment.appendChild(clone)

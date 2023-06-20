@@ -20,6 +20,24 @@
          iframe{
             margin-top: 2%;
          }
+         div{
+            button.btn-success{
+                transition: all 2s ease;
+            }
+            button.round{
+                width: 100px;
+                height: 100px;
+                border-radius: 100%;
+              }
+            button.hidden{
+                 display: none
+            }
+            div{
+                p{
+                    color: rgb(67, 121, 67);
+                }
+            }
+         }
     }
     section._contactanos-Contenedor{
         height:100vh;

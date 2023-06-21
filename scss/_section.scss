@@ -32,13 +32,21 @@
             button.hidden{
                  display: none
             }
+            button svg{
+                background: rgb(111, 190, 111);
+                border-radius: 100%;
+            }
             div{
                 p{
                     color: rgb(67, 121, 67);
                 }
             }
          }
+         
     }
+    section.mleft{
+        margin-left: 5%;
+     }
     section._contactanos-Contenedor{
         height:100vh;
    }

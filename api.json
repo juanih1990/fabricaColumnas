@@ -3,7 +3,7 @@
       "precio": 500,
       "id": 1,
       "title": "Columna de Hormigon 14/2400",
-      "imgUrl": "../img/14.2400.jpg"
+      "imgUrl": "../img/14.2400.png"
     },
     {
       "precio": 300,
@@ -15,12 +15,54 @@
       "precio": 100,
       "id": 3,
       "title": "Columna de Hormigon 750/450",
-      "imgUrl": "../img/750.450.jpg"
+      "imgUrl": "../img/750.450.png"
     },
     {
-      "precio": 50,
+      "precio": 2550,
       "id": 4,
       "title": "Columna de Hormigon 950/450",
-      "imgUrl": "../img/950.450.jpg"
+      "imgUrl": "../img/950.450.png"
+    },
+    {
+      "precio": 15550,
+      "id": 5,
+      "title": "Base Monoposte para Transformadores",
+      "imgUrl": "../img/Base-Monoposte-para-Transformadores.png"
+    },
+    {
+      "precio": 20000,
+      "id": 6,
+      "title": "Base Soporte para Seccionador Tripolar tipo cuerno",
+      "imgUrl": "../img/Base-Soporte-para-Seccionador-Tripolar-tipo-cuerno.png"
+    },
+    {
+      "precio": 3000,
+      "id": 7,
+      "title": "Cruceta Doble Noyo",
+      "imgUrl": "../img/Cruceta-Doble-Noyo.png"
+    },
+    {
+      "precio": 5000,
+      "id": 8,
+      "title": "Cruzeta Doble Noyo Desviación",
+      "imgUrl": "../img/Cruzeta-Doble-Noyo-Desviación.png"
+    },
+    {
+      "precio": 16000,
+      "id": 9,
+      "title": "Ménsula Doble Terminal",
+      "imgUrl": "../img/Ménsula-Doble-Terminal.png"
+    },
+    {
+      "precio": 17000,
+      "id": 10,
+      "title": "Ménsula Monoposte",
+      "imgUrl": "../img/Ménsula-Monoposte.png"
+    },
+    {
+      "precio": 1950,
+      "id": 11,
+      "title": "Vínculo Doble",
+      "imgUrl": "../img/Vínculo-Doble.png"
     }
 ]

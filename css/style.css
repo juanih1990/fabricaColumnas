@@ -21,7 +21,7 @@ body._questions-BGcolor {
     color: rgb(153, 155, 32) !important;
   }
   nav div._Logo-Nav {
-    background-image: url(../img/CosyproLogo.png);
+    background-image: url(../img/CosyproLogo.webp);
     background-size: contain;
     background-repeat: no-repeat;
     height: 64px;
@@ -85,7 +85,7 @@ body._questions-BGcolor {
     margin: 5%;
   }
   section div._Card-Img3 {
-    background-image: url(../img/25a.png);
+    background-image: url(../img/25aa.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 600px;
@@ -151,7 +151,7 @@ body._questions-BGcolor {
     margin: 10% 0%;
   }
   section div._Card-Img3 {
-    background-image: url(../img/25a.png);
+    background-image: url(../img/25aa.png);
     background-size: cover;
     background-repeat: no-repeat;
     height: 500px;
@@ -171,7 +171,7 @@ body._questions-BGcolor {
 }
 @media (min-width: 780px) {
   article.art1 {
-    background-image: url(../img/CamiónCargado.png);
+    background-image: url(../img/CamiónCargado.webp);
     background-size: cover;
     background-repeat: no-repeat;
     height: 600px;
@@ -185,7 +185,7 @@ body._questions-BGcolor {
     margin-top: 8%;
   }
   article._producto-columna {
-    background-image: url(../img/CamiónCargado.png);
+    background-image: url(../img/CamiónCargado.webp);
     background-size: cover;
     background-repeat: no-repeat;
     height: 600px;
@@ -264,7 +264,7 @@ body._questions-BGcolor {
 }
 @media (max-width: 780px) {
   article.art1 {
-    background-image: url(../img/CamiónCargado.png);
+    background-image: url(../img/CamiónCargado.webp);
     background-size: cover;
     background-repeat: no-repeat;
     height: 500px;

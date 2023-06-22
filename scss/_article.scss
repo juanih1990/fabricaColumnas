@@ -1,6 +1,6 @@
 @media (min-width: 780px){
     article.art1{
-        background-image: url(../img/CamiónCargado.png);
+        background-image: url(../img/CamiónCargado.webp);
         @include cardIMG-desktop();
         margin: 2%;
         margin-left: 1%;
@@ -12,7 +12,7 @@
         margin-top: 8%;
     }
     article._producto-columna{
-        background-image: url(../img/CamiónCargado.png);
+        background-image: url(../img/CamiónCargado.webp);
         @include cardIMG-desktop();
         height: 350px;
     }
@@ -96,7 +96,7 @@
 }
 @media (max-width: 780px){
     article.art1{
-        background-image: url(../img/CamiónCargado.png);
+        background-image: url(../img/CamiónCargado.webp);
         @include cardIMG-mobie();
         height: 250px;
     }

@@ -7,6 +7,10 @@ const items =  document.getElementById('items')
 const footer = document.getElementById('footer')
 const enviarPresupuesto = document.getElementById('enviar')
 const presupuesto = document.getElementById('presupuesto')
+const listarProductos = document.querySelector('.listarProductos')
+const filtrarColumnas = document.querySelector(".filtrarColumnas")
+const filtrarAccesorios = document.querySelector(".filtrarAccessorios")
+const buscarProductos = document.querySelector(".buscarProductos")
 const fragment = document.createDocumentFragment()
 const productos = []
 const carrito = []
@@ -24,13 +28,14 @@ const pintCards = data => {
     data.forEach(producto => {    //Cargo todos los datos en un objeto productos
         productos.push({
             id: producto.id,
-            title : producto.title,
+            producto : producto.producto.toUpperCase(),
             precio : producto.precio,
-            imgUrl: producto.imgUrl
+            imgUrl: producto.imgUrl,
+            tipo: producto.tipo
         })
     });
     productos.forEach(producto => {
-        templateCards.querySelector('h5').textContent = producto.title
+        templateCards.querySelector('h5').textContent = producto.producto
         templateCards.querySelector('span').textContent = producto.precio
         templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
         templateCards.querySelector('.btn-dark').dataset.id = producto.id
@@ -68,6 +73,21 @@ enviarPresupuesto.addEventListener('click',e =>{
       
     }
 })
+
+//aplico filtros
+filtrarColumnas.addEventListener('click', e =>{
+    filtroColumnas(e)
+})
+listarProductos.addEventListener('click', e =>{
+    listaProductos(e)
+})
+filtrarAccesorios.addEventListener('click',e => {
+    filtroAccesorio(e)
+})
+buscarProductos.addEventListener('click',e =>{
+    buscarProducto(e)
+})
+
 const agregarCarrito = e =>{
     if(e.target.classList.contains('btn-dark')){
         if(enviarPresupuesto.classList.contains("round") || enviarPresupuesto.classList.contains("hidden")){
@@ -85,7 +105,7 @@ const agregarCarrito = e =>{
             carrito.push(
                 {
                     id: ids,
-                    producto: objeto.querySelector('.card-title').textContent,
+                    producto: objeto.querySelector('.card-producto').textContent,
                     cantidad: 1,
                     precio: objeto.querySelector('.Precio').textContent               
                 }
@@ -162,4 +182,61 @@ const btnVaciarCarrito = e => {
            <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
          </tr>`
     }
+}
+const filtroColumnas = (e) => {
+    items.innerHTML = ""
+    const productoFiltrado = productos.filter(filtrado  => filtrado.tipo.includes("Columna"))
+    productoFiltrado.forEach(producto => {
+        templateCards.querySelector('h5').textContent = producto.producto
+        templateCards.querySelector('span').textContent = producto.precio
+        templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
+        templateCards.querySelector('.btn-dark').dataset.id = producto.id
+        const clone = templateCards.cloneNode(true)
+        fragment.appendChild(clone)
+       
+    });
+    items.appendChild(fragment)
+}
+const listaProductos = e =>{
+    items.innerHTML =""
+    productos.forEach(producto =>{
+        templateCards.querySelector('h5').textContent = producto.producto
+        templateCards.querySelector('span').textContent = producto.precio
+        templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
+        templateCards.querySelector('.btn-dark').dataset.id = producto.id
+        const clone = templateCards.cloneNode(true)
+        fragment.appendChild(clone)  
+    });
+    items.appendChild(fragment)
+}
+const filtroAccesorio = e =>{
+
+    //tengo que agregar un tipo = accesorio en la json y filtrar por eso.
+    items.innerHTML = ""
+    const productoFiltrado = productos.filter(filtrado  => filtrado.tipo.includes("Accesorio"))
+    productoFiltrado.forEach(producto => {
+        templateCards.querySelector('h5').textContent = producto.producto
+        templateCards.querySelector('span').textContent = producto.precio
+        templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
+        templateCards.querySelector('.btn-dark').dataset.id = producto.id
+        const clone = templateCards.cloneNode(true)
+        fragment.appendChild(clone)
+       
+    });
+    items.appendChild(fragment)
+}
+const buscarProducto = e =>{
+    items.innerHTML=""
+    let productoAbuscar = document.querySelector(".productoAbuscar").value
+    const productosBuscados = productos.filter(filtrado => filtrado.producto.includes(productoAbuscar.toUpperCase()))
+    productosBuscados.forEach(producto => {
+        templateCards.querySelector('h5').textContent = producto.producto
+        templateCards.querySelector('span').textContent = producto.precio
+        templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
+        templateCards.querySelector('.btn-dark').dataset.id = producto.id
+        const clone = templateCards.cloneNode(true)
+        fragment.appendChild(clone)
+       
+    });
+    items.appendChild(fragment)
 }

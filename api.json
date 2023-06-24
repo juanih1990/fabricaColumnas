@@ -2,67 +2,78 @@
     {
       "precio": 500,
       "id": 1,
-      "title": "Columna de Hormigon 14/2400",
-      "imgUrl": "../img/14.2400.webp"
+      "producto": "columna de Hormigon 14/2400",
+      "imgUrl": "../img/14.2400.webp",
+      "tipo" : "Columna"
     },
     {
       "precio": 300,
       "id": 2,
-      "title": "Columna de Hormigon 9/1950",
-      "imgUrl": "../img/9.1950.webp"
+      "producto": "columna de Hormigon 9/1950",
+      "imgUrl": "../img/9.1950.webp",
+      "tipo" : "Columna"
     },
     {
       "precio": 100,
       "id": 3,
-      "title": "Columna de Hormigon 750/450",
-      "imgUrl": "../img/750.450.webp"
+      "producto": "columna de Hormigon 750/450",
+      "imgUrl": "../img/750.450.webp",
+      "tipo" : "Columna"
     },
     {
       "precio": 2550,
       "id": 4,
-      "title": "Columna de Hormigon 950/450",
-      "imgUrl": "../img/950.450.webp"
+      "producto": "columna de Hormigon 950/450",
+      "imgUrl": "../img/950.450.webp",
+      "tipo" : "Columna"
     },
     {
       "precio": 15550,
       "id": 5,
-      "title": "Base Monoposte para Transformadores",
-      "imgUrl": "../img/Base-Monoposte-para-Transformadores.webp"
+      "producto": "base Monoposte para Transformadores",
+      "imgUrl": "../img/Base-Monoposte-para-Transformadores.webp",
+      "tipo" : "Accesorio"
     },
     {
       "precio": 20000,
       "id": 6,
-      "title": "Base Soporte para Seccionador Tripolar tipo cuerno",
-      "imgUrl": "../img/Base-Soporte-para-Seccionador-Tripolar-tipo-cuerno.webp"
+      "producto": "base Soporte para Seccionador Tripolar tipo cuerno",
+      "imgUrl": "../img/Base-Soporte-para-Seccionador-Tripolar-tipo-cuerno.webp",
+      "tipo" : "Accesorio"
     },
     {
       "precio": 3000,
       "id": 7,
-      "title": "Cruceta Doble Noyo",
-      "imgUrl": "../img/Cruceta-Doble-Noyo.webp"
+      "producto": "cruceta Doble Noyo",
+      "imgUrl": "../img/Cruceta-Doble-Noyo.webp",
+      "tipo" : "Accesorio"
     },
     {
       "precio": 5000,
       "id": 8,
-      "title": "Cruzeta Doble Noyo Desviación",
-      "imgUrl": "../img/Cruzeta-Doble-Noyo-Desviación.png"
+      "producto": "cruzeta Doble Noyo Desviación",
+      "imgUrl": "../img/Cruzeta-Doble-Noyo-Desviación.webp",
+      "tipo" : "Accesorio"
     },
     {
       "precio": 16000,
       "id": 9,
-      "title": "Ménsula Doble Terminal",
-      "imgUrl": "../img/Ménsula-Doble-Terminal.png"
+      "producto": "ménsula Doble Terminal",
+      "imgUrl": "../img/Ménsula-Doble-Terminal.png",
+      "tipo" : "Accesorio"
     },
     {
       "precio": 17000,
       "id": 10,
-      "title": "Ménsula Monoposte",
-      "imgUrl": "../img/Ménsula-Monoposte.png"
+      "producto": "ménsula Monoposte",
+      "imgUrl": "../img/Ménsula-Monoposte.webp",
+      "tipo" : "Accesorio"
     },
     {
       "precio": 1950,
       "id": 11,
-      "title": "Vínculo Doble",
-      "imgUrl": "../img/Vínculo-Doble.png"
+      "producto": "vínculo Doble",
+      "imgUrl": "../img/Vínculo-Doble.webp",
+      "tipo" : "Accesorio"
     }
 ]

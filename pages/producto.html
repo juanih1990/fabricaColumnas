@@ -20,19 +20,50 @@
      <link rel="stylesheet" href="../css/style.css">
     <title>Producto</title>
 </head>
-<body >
+<body>
      <main class="container-fluid">
+      <div class="d-flex justify-content-end"><a href="../index.html"><button type="button" class="btn btn-secondary"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-counterclockwise" viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+        <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+      </svg> Home</button></a> 
+    </div> 
 
-
-            <h1> Arma tu pedido:  </h1>
-
+            <h1> Arma tu pedido:  </h1>           
             <hr>
 
+            <!-- menu -->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+              <div class="container-fluid">      
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                  <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                       <a class="nav-link active listarProductos" aria-current="page" href="#"><b>Listar Productos</b></a> <!-- aka en adelante -->
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active filtrarColumnas" aria-current="page" href="#">Columnas</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link active filtrarAccessorios" aria-current="page" href="#">Accesorios</a>
+                    </li> 
+                  </ul>
+                  <form class="d-flex" role="search">
+                    <input class="form-control me-2 productoAbuscar" type="search" placeholder="Buscar" aria-label="Search">
+                    <button class="btn btn-outline-success buscarProductos" type="submit">Buscar</button>
+                  </form>
+                </div>
+              </div>
+            </nav>
+
+            <!-- items productos -->
             <section  id="items" class="row d-flex justify-content-start mleft">                  
             </section>
 
             <hr>
-            <section>
+            <!-- carrito -->
+            <section>             
             <table class="table">
               <thead>
                 <tr>
@@ -65,7 +96,7 @@
                 <div class="card p-3 m-3" style="width: 18rem;">
                     <img src="..." class="card-img-top img-fluid" style="height: 169px" alt="..." id="imgCard">
                     <div class="card-body">
-                      <h5 class="card-title">Columna</h5>
+                      <h5 class="card-producto">Columna</h5>
                       <p><b> $ <span class="Precio">1500</span> </b> </p>
                       <a href="#enviar" class="btn btn-dark">AGREGAR</a>
                     </div>

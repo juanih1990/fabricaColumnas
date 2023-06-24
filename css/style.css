@@ -73,7 +73,7 @@ body._questions-BGcolor {
     background-size: cover;
     background-repeat: no-repeat;
     height: 600px;
-    background-image: url(../img/molde.png);
+    background-image: url(../img/molde.webp);
     margin-top: 5%;
     margin-left: 2%;
   }
@@ -141,7 +141,7 @@ body._questions-BGcolor {
     background-size: cover;
     background-repeat: no-repeat;
     height: 500px;
-    background-image: url(../img/molde.png);
+    background-image: url(../img/molde.webp);
   }
   section div._Card-Img2 {
     background-image: url(../img/Torción21.png);
@@ -257,7 +257,7 @@ body._questions-BGcolor {
   }
   article._cosypro-ImgPrincipal {
     height: 600px;
-    background-image: url(../img/fabrica.png);
+    background-image: url(../img/fabrica.webp);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -335,7 +335,7 @@ body._questions-BGcolor {
   }
   article._cosypro-ImgPrincipal {
     height: 200px;
-    background-image: url(../img/fabrica.png);
+    background-image: url(../img/fabrica.webp);
     background-size: cover;
     background-repeat: no-repeat;
   }
@@ -396,7 +396,7 @@ body._questions-BGcolor {
 @media (min-width: 780px) {
   main._contactanos-IMG {
     height: 70vh;
-    background-image: url(../img/empleado.png);
+    background-image: url(../img/empleado.webp);
     background-size: cover;
     filter: brightness(2);
   }
@@ -412,7 +412,7 @@ body._questions-BGcolor {
 }
 @media (max-width: 780px) {
   main._contactanos-IMG {
-    background-image: url(../img/empleado.png);
+    background-image: url(../img/empleado.webp);
     background-size: contain;
     background-repeat: no-repeat;
     height: 40vh;

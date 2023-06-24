@@ -57,33 +57,36 @@
               </div>
             </nav>
 
+             <!-- carrito -->
+             <section>             
+              <table class="table m-5">
+                <thead>
+                  <tr>
+                    <th scope="col">ID</th>
+                    <th scope="col">PRODUCTO</th>
+                    <th scope="col">CANTIDAD</th>
+                    <th scope="col">ACCION</th>
+                    <th scope="col">PRECIO</th>
+                  </tr>
+                </thead>
+                <tbody id="presupuesto">
+                </tbody>
+                <tfoot id="footer">
+                  
+                </tfoot>
+              </table>
+             
+            </section>
             <!-- items productos -->
             <section  id="items" class="row d-flex justify-content-start mleft">                  
             </section>
 
-            <hr>
-            <!-- carrito -->
-            <section>             
-            <table class="table">
-              <thead>
-                <tr>
-                  <th scope="col">ID</th>
-                  <th scope="col">PRODUCTO</th>
-                  <th scope="col">CANTIDAD</th>
-                  <th scope="col">ACCION</th>
-                  <th scope="col">PRECIO</th>
-                </tr>
-              </thead>
-              <tbody id="presupuesto">
-              </tbody>
-              <tfoot id="footer">
-                
-              </tfoot>
-            </table>
             <div class="d-flex justify-content-center m-5 ">
               <button class="btn btn-success" id="enviar"> ENVIAR </button>
             </div>
-          </section>
+
+            <hr>
+           
 
             
 
@@ -98,7 +101,7 @@
                     <div class="card-body">
                       <h5 class="card-producto">Columna</h5>
                       <p><b> $ <span class="Precio">1500</span> </b> </p>
-                      <a href="#enviar" class="btn btn-dark">AGREGAR</a>
+                      <a  class="btn btn-dark">AGREGAR</a>
                     </div>
                   </div>
               </template>

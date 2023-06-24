@@ -133,6 +133,7 @@ const pintarCarrito = carrito => {
           
 }
 const btnaccion = e => {
+    console.log(e.target)
     presupuesto.innerHTML = " "
         if(e.target.classList.contains('btn-success')){
            let objeto = e.target.parentElement.parentElement
@@ -142,8 +143,6 @@ const btnaccion = e => {
            const clone = templatepresupuesto.cloneNode(true)
            fragment.appendChild(clone)
            presupuesto.appendChild(fragment)
-           pintarCarrito(carrito)
-           pintarFooter(carrito) 
         }
         else if(e.target.classList.contains('btn-danger')){
            let objeto =  e.target.parentElement.parentElement
@@ -158,10 +157,10 @@ const btnaccion = e => {
            const clone = templatepresupuesto.cloneNode(true)
            fragment.appendChild(clone)
            presupuesto.appendChild(fragment)
-           pintarCarrito(carrito)
-           pintarFooter(carrito) 
         }
-        e.stopPropagation()
+        pintarCarrito(carrito)
+        pintarFooter(carrito) 
+        e.stopPropagation(e)
 }
 const pintarFooter = (carrito) => {
     footer.innerHTML = ""

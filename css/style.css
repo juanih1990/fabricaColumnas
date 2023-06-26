@@ -113,6 +113,16 @@ body._questions-BGcolor {
   section div div p {
     color: rgb(67, 121, 67);
   }
+  section div p.cant-Card {
+    background: rgb(16, 102, 54);
+    width: 29px;
+    height: 25px;
+    border-radius: 100%;
+    color: rgb(253, 253, 253);
+    display: inline-block;
+    margin-left: 25%;
+    text-align: center;
+  }
   section.mleft {
     margin-left: 5%;
   }

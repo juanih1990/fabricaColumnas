@@ -31,23 +31,17 @@ const pintCards = data => {
             producto : producto.producto.toUpperCase(),
             precio : producto.precio,
             imgUrl: producto.imgUrl,
-            tipo: producto.tipo
+            tipo: producto.tipo,  
+            carrito: producto.carrito//
         })
     });
-    productos.forEach(producto => {
-        templateCards.querySelector('h5').textContent = producto.producto
-        templateCards.querySelector('span').textContent = producto.precio
-        templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
-        templateCards.querySelector('.btn-dark').dataset.id = producto.id
-        const clone = templateCards.cloneNode(true)
-        fragment.appendChild(clone)
-       
-    });
-    items.appendChild(fragment)
+
+    pintar(productos)
+   
       
 }
-items.addEventListener('click',e =>{
-    agregarCarrito(e)
+items.addEventListener('click',e =>{   
+    agregarCarrito(e) 
 })
 presupuesto.addEventListener('click',e => {
     btnaccion(e)
@@ -70,10 +64,12 @@ enviarPresupuesto.addEventListener('click',e =>{
         footer.innerHTML = ` <tr id="footer">
         <th scope="row" colspan="5">Enviamos tu pedido, nuestros encargados de ventas se pondran en contacto.</th>
       </tr>`
-      
+        for (const resetCant of productos) {
+                resetCant.carrito = 0
+        }
+            pintar(productos)  
     }
 })
-
 //aplico filtros
 filtrarColumnas.addEventListener('click', e =>{
     filtroColumnas(e)
@@ -97,22 +93,27 @@ const agregarCarrito = e =>{
         }
          let objeto = e.target.parentElement
          let ids = objeto.querySelector('.btn-dark').dataset.id
+         productos[ids - 1].carrito  = productos[ids - 1].carrito + 1 //pinto en items, que se agrego un producto
          if(carrito.find(ele => ele.id == ids)){
              let position = carrito.findIndex((index) => index.id == ids)
              carrito[position].cantidad++
          }
          else{
-            carrito.push(
-                {
-                    id: ids,
-                    producto: objeto.querySelector('.card-producto').textContent,
-                    cantidad: 1,
-                    precio: objeto.querySelector('.Precio').textContent               
-                }
-            )
+                carrito.push(
+                    {
+                        id: ids,
+                        producto: objeto.querySelector('.card-producto').textContent,
+                        cantidad: 1,
+                        precio: objeto.querySelector('.Precio').textContent               
+                    }
+                 
+                )
+                 
          }
-         pintarCarrito(carrito)
-         pintarFooter(carrito) 
+         pintar(productos)
+         pintarCarrito(carrito) //repinto el carro
+         pintarFooter(carrito) // repinto el footerS
+        
     }
     
     e.stopPropagation()
@@ -133,13 +134,13 @@ const pintarCarrito = carrito => {
           
 }
 const btnaccion = e => {
-    console.log(e.target)
     presupuesto.innerHTML = " "
         if(e.target.classList.contains('btn-success')){
            let objeto = e.target.parentElement.parentElement
            let ids = objeto.querySelector('.btn-success').dataset.id
            let position = carrito.findIndex(index => index.id == ids)
            carrito[position].cantidad++
+           productos[ids - 1].carrito  = productos[ids - 1].carrito + 1 //pinto en items, que se agrego un producto
            const clone = templatepresupuesto.cloneNode(true)
            fragment.appendChild(clone)
            presupuesto.appendChild(fragment)
@@ -150,14 +151,22 @@ const btnaccion = e => {
            let position = carrito.findIndex(index => index.id == ids)
            if(carrito[position].cantidad > 1){
              carrito[position].cantidad--
+             productos[ids - 1].carrito  = productos[ids - 1].carrito - 1 //pinto en items, que se saco un producto
            }
-           else{
+           else{         
+              productos[ids - 1].carrito  = productos[ids - 1].carrito - 1 //pinto en items, que se saco un producto
               carrito.splice(position,1)
+              if(carrito.length === 0){
+                    vaciar()
+                    return
+              }
+             
            }
            const clone = templatepresupuesto.cloneNode(true)
            fragment.appendChild(clone)
            presupuesto.appendChild(fragment)
         }
+        pintar(productos)
         pintarCarrito(carrito)
         pintarFooter(carrito) 
         e.stopPropagation(e)
@@ -174,12 +183,7 @@ const pintarFooter = (carrito) => {
 }
 const btnVaciarCarrito = e => {
     if(e.target.classList.contains('btn-danger')){
-           carrito.splice(0,carrito.length)
-           pintarCarrito(carrito)
-           pintarFooter(carrito)
-           footer.innerHTML = ` <tr id="footer">
-           <th scope="row" colspan="5">Carrito vacío - comience a comprar!</th>
-         </tr>`
+          vaciar()
     }
 }
 const filtroColumnas = (e) => {
@@ -228,14 +232,38 @@ const buscarProducto = e =>{
     items.innerHTML=""
     let productoAbuscar = document.querySelector(".productoAbuscar").value
     const productosBuscados = productos.filter(filtrado => filtrado.producto.includes(productoAbuscar.toUpperCase()))
-    productosBuscados.forEach(producto => {
+    pintar(productosBuscados)
+}
+const pintar = (array) => {
+    items.innerHTML=""
+    array.forEach(producto => {
         templateCards.querySelector('h5').textContent = producto.producto
         templateCards.querySelector('span').textContent = producto.precio
         templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
         templateCards.querySelector('.btn-dark').dataset.id = producto.id
+        templateCards.querySelector('.cant-Card').textContent = producto.carrito
+        if(templateCards.querySelector('.cant-Card').textContent == 0){
+            templateCards.querySelector('.cant-Card').style.display = "none";  //si es cero le pongo display none por cuestion estetica
+        }
+        else{
+            templateCards.querySelector('.cant-Card').style.display = "inline-block"; //si es mayor a cero permito ver el contenido de la cantidad 
+        }
         const clone = templateCards.cloneNode(true)
         fragment.appendChild(clone)
-       
+
     });
+    
+    
     items.appendChild(fragment)
+}
+const vaciar = () =>{
+    carrito.splice(0,carrito.length)
+    pintarCarrito(carrito)
+    footer.innerHTML = ` <tr id="footer">
+                         <th scope="row" colspan="5">Arma tu pedido ... !</th>
+                         </tr>`
+    for (const resetCant of productos) {
+        resetCant.carrito = 0
+    }
+    pintar(productos)
 }

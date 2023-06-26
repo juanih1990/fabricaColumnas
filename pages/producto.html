@@ -56,7 +56,11 @@
                 </div>
               </div>
             </nav>
-
+             <!-- items productos -->
+             <section  id="items" class="row d-flex justify-content-start mleft">                  
+            </section>
+            <hr>
+           
              <!-- carrito -->
              <section>             
               <table class="table m-5">
@@ -77,15 +81,12 @@
               </table>
              
             </section>
-            <!-- items productos -->
-            <section  id="items" class="row d-flex justify-content-start mleft">                  
-            </section>
+           
 
             <div class="d-flex justify-content-center m-5 ">
               <button class="btn btn-success" id="enviar"> ENVIAR </button>
             </div>
 
-            <hr>
            
 
             
@@ -101,7 +102,8 @@
                     <div class="card-body">
                       <h5 class="card-producto">Columna</h5>
                       <p><b> $ <span class="Precio">1500</span> </b> </p>
-                      <a  class="btn btn-dark">AGREGAR</a>
+                      <a  class="btn btn-dark">AGREGAR</a>                              
+                      <p class="cant-Card"> 0 </p>                             
                     </div>
                   </div>
               </template>
@@ -112,12 +114,15 @@
                 <th  scope="row">ID</th>
                 <td id="prod">Columna</td>
                 <td id="cant">1</td>
-                <td> <button class="btn btn-success btn-sm bg-success">
-                             +
-                      </button>
+                <td> 
                       <button class="btn btn-danger btn-sm bg-danger">
                              -
-                      </button> </td>
+                      </button> 
+                  
+                      <button class="btn btn-success btn-sm bg-success">
+                             +
+                      </button>
+                </td>     
                 <td id="precio"> $ <span> 500 </span> </td>  
               </tr>  
               </template>

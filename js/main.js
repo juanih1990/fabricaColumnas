@@ -14,7 +14,10 @@ const buscarProductos = document.querySelector(".buscarProductos")
 const fragment = document.createDocumentFragment()
 const productos = []
 const carrito = []
+let estado = 0   // 1- Listar 2-FiltroColumna 3-FiltroAccesorio 4-Buscar  //lo aplico para cuando estoy en un filtro poder agregar sin refrescar todas las cards
+                                                                                //es mas que nada para saber donde estoy parado y que refrescar
 
+//cargo los datos del json que lo tengo en una pagina aparte
 const fetchdata = async() => {
     try {
           const res = await fetch('../api.json')
@@ -24,6 +27,7 @@ const fetchdata = async() => {
         console.log(error)
     }   
 }
+//comienzo cargando el json en un objeto. para poder usarlo a gusto
 const pintCards = data => {
     data.forEach(producto => {    //Cargo todos los datos en un objeto productos
         productos.push({
@@ -40,6 +44,8 @@ const pintCards = data => {
    
       
 }
+
+//Eventos.
 items.addEventListener('click',e =>{   
     agregarCarrito(e) 
 })
@@ -70,20 +76,72 @@ enviarPresupuesto.addEventListener('click',e =>{
             pintar(productos)  
     }
 })
-//aplico filtros
 filtrarColumnas.addEventListener('click', e =>{
     filtroColumnas(e)
 })
-listarProductos.addEventListener('click', e =>{
-    listaProductos(e)
-})
 filtrarAccesorios.addEventListener('click',e => {
     filtroAccesorio(e)
+})
+listarProductos.addEventListener('click', e =>{
+    listaProductos(e)
 })
 buscarProductos.addEventListener('click',e =>{
     buscarProducto(e)
 })
 
+//funciones
+
+//pinto el array en las cards     
+const pintar = (array) => {
+    items.innerHTML=""
+    array.forEach(producto => {
+        templateCards.querySelector('h5').textContent = producto.producto
+        templateCards.querySelector('span').textContent = producto.precio
+        templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
+        templateCards.querySelector('.btn-dark').dataset.id = producto.id
+        templateCards.querySelector('.cant-Card').textContent = producto.carrito
+        if(templateCards.querySelector('.cant-Card').textContent == 0){
+            templateCards.querySelector('.cant-Card').style.display = "none";  //si es cero le pongo display none por cuestion estetica
+        }
+        else{
+            templateCards.querySelector('.cant-Card').style.display = "inline-block"; //si es mayor a cero permito ver el contenido de la cantidad 
+        }
+        const clone = templateCards.cloneNode(true)
+        fragment.appendChild(clone)
+
+    });
+    
+    
+    items.appendChild(fragment)
+}
+//pinto el carrito en la tabla
+const pintarCarrito = carrito => {
+    presupuesto.innerHTML=""
+    for (const element of carrito) {
+        templatepresupuesto.querySelector('th').textContent = element.id
+        templatepresupuesto.getElementById('prod').textContent = element.producto
+        templatepresupuesto.getElementById('cant').textContent = element.cantidad
+        templatepresupuesto.querySelector('span').textContent = element.precio * element.cantidad
+        templatepresupuesto.querySelector('.btn-success').dataset.id = element.id
+        templatepresupuesto.querySelector('.btn-danger').dataset.id = element.id
+        const clone =templatepresupuesto.cloneNode(true)
+        fragment.appendChild(clone)
+    }
+    presupuesto.appendChild(fragment) 
+          
+}
+//pinto la cantidad total del carrito y el precio total, en la parte inferior de la tabla.
+const pintarFooter = (carrito) => {
+    footer.innerHTML = ""
+    let cantProductos = carrito.reduce((acum,{cantidad}) => acum + cantidad,0)
+    let precioTotal = carrito.reduce((acum,{cantidad,precio}) => acum + cantidad * precio,0)
+    templateFooterPresupuesto.querySelectorAll('td')[0].textContent = cantProductos
+    templateFooterPresupuesto.querySelector('span').textContent = precioTotal
+    const clone = templateFooterPresupuesto.cloneNode(true)
+    fragment.appendChild(clone)
+    footer.appendChild(fragment)
+}
+//agrego items al carrito (tabla) le llamo carrito pero no es un carrito. estoy armando una planilla de presupuesto.
 const agregarCarrito = e =>{
     if(e.target.classList.contains('btn-dark')){
         if(enviarPresupuesto.classList.contains("round") || enviarPresupuesto.classList.contains("hidden")){
@@ -110,7 +168,7 @@ const agregarCarrito = e =>{
                 )
                  
          }
-         pintar(productos)
+         estadoPintar()
          pintarCarrito(carrito) //repinto el carro
          pintarFooter(carrito) // repinto el footerS
         
@@ -118,21 +176,7 @@ const agregarCarrito = e =>{
     
     e.stopPropagation()
 }
-const pintarCarrito = carrito => {
-    presupuesto.innerHTML=""
-    for (const element of carrito) {
-        templatepresupuesto.querySelector('th').textContent = element.id
-        templatepresupuesto.getElementById('prod').textContent = element.producto
-        templatepresupuesto.getElementById('cant').textContent = element.cantidad
-        templatepresupuesto.querySelector('span').textContent = element.precio * element.cantidad
-        templatepresupuesto.querySelector('.btn-success').dataset.id = element.id
-        templatepresupuesto.querySelector('.btn-danger').dataset.id = element.id
-        const clone =templatepresupuesto.cloneNode(true)
-        fragment.appendChild(clone)
-    }
-    presupuesto.appendChild(fragment) 
-          
-}
+//funciones de los botones + y - de la tabla, con la que agrego o saco elementos, lo mismo son descontados tambien de las cars en el section principal
 const btnaccion = e => {
     presupuesto.innerHTML = " "
         if(e.target.classList.contains('btn-success')){
@@ -166,96 +210,46 @@ const btnaccion = e => {
            fragment.appendChild(clone)
            presupuesto.appendChild(fragment)
         }
-        pintar(productos)
+        estadoPintar()
         pintarCarrito(carrito)
         pintarFooter(carrito) 
         e.stopPropagation(e)
 }
-const pintarFooter = (carrito) => {
-    footer.innerHTML = ""
-    let cantProductos = carrito.reduce((acum,{cantidad}) => acum + cantidad,0)
-    let precioTotal = carrito.reduce((acum,{cantidad,precio}) => acum + cantidad * precio,0)
-    templateFooterPresupuesto.querySelectorAll('td')[0].textContent = cantProductos
-    templateFooterPresupuesto.querySelector('span').textContent = precioTotal
-    const clone = templateFooterPresupuesto.cloneNode(true)
-    fragment.appendChild(clone)
-    footer.appendChild(fragment)
-}
+//Vacio la planilla de presupuesto completa con un boton. Tambien puedo vaciar item a item. con el  btn " - " de la tabla
 const btnVaciarCarrito = e => {
     if(e.target.classList.contains('btn-danger')){
           vaciar()
     }
 }
-const filtroColumnas = (e) => {
+//funcion para filtrar por columnas, que es el producto principal q vende la empresa. le paso el array del filter a la funcion pintar. 
+const filtroColumnas = () => {
+    estado = 2
     items.innerHTML = ""
     const productoFiltrado = productos.filter(filtrado  => filtrado.tipo.includes("Columna"))
-    productoFiltrado.forEach(producto => {
-        templateCards.querySelector('h5').textContent = producto.producto
-        templateCards.querySelector('span').textContent = producto.precio
-        templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
-        templateCards.querySelector('.btn-dark').dataset.id = producto.id
-        const clone = templateCards.cloneNode(true)
-        fragment.appendChild(clone)
-       
-    });
-    items.appendChild(fragment)
+    pintar(productoFiltrado)
 }
-const listaProductos = e =>{
-    items.innerHTML =""
-    productos.forEach(producto =>{
-        templateCards.querySelector('h5').textContent = producto.producto
-        templateCards.querySelector('span').textContent = producto.precio
-        templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
-        templateCards.querySelector('.btn-dark').dataset.id = producto.id
-        const clone = templateCards.cloneNode(true)
-        fragment.appendChild(clone)  
-    });
-    items.appendChild(fragment)
-}
-const filtroAccesorio = e =>{
-
-    //tengo que agregar un tipo = accesorio en la json y filtrar por eso.
+//funcion para filtrar por accesorio, producto secundario q vende la empresa. le paso el array del filter a la funcion pintar. 
+const filtroAccesorio = () =>{
+    estado= 3
     items.innerHTML = ""
     const productoFiltrado = productos.filter(filtrado  => filtrado.tipo.includes("Accesorio"))
-    productoFiltrado.forEach(producto => {
-        templateCards.querySelector('h5').textContent = producto.producto
-        templateCards.querySelector('span').textContent = producto.precio
-        templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
-        templateCards.querySelector('.btn-dark').dataset.id = producto.id
-        const clone = templateCards.cloneNode(true)
-        fragment.appendChild(clone)
-       
-    });
-    items.appendChild(fragment)
+    pintar(productoFiltrado)
 }
-const buscarProducto = e =>{
+//Lo unico que hace es llamar a la funcion pintar() y me vuelve a listar los productos cuando doy click en su respectivo boton
+const listaProductos = () =>{
+    estado = 1
+    pintar(productos)
+}
+//Busco los productos del array de objetos
+const buscarProducto = () =>{
     items.innerHTML=""
+    estado = 4
     let productoAbuscar = document.querySelector(".productoAbuscar").value
     const productosBuscados = productos.filter(filtrado => filtrado.producto.includes(productoAbuscar.toUpperCase()))
     pintar(productosBuscados)
+   
 }
-const pintar = (array) => {
-    items.innerHTML=""
-    array.forEach(producto => {
-        templateCards.querySelector('h5').textContent = producto.producto
-        templateCards.querySelector('span').textContent = producto.precio
-        templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
-        templateCards.querySelector('.btn-dark').dataset.id = producto.id
-        templateCards.querySelector('.cant-Card').textContent = producto.carrito
-        if(templateCards.querySelector('.cant-Card').textContent == 0){
-            templateCards.querySelector('.cant-Card').style.display = "none";  //si es cero le pongo display none por cuestion estetica
-        }
-        else{
-            templateCards.querySelector('.cant-Card').style.display = "inline-block"; //si es mayor a cero permito ver el contenido de la cantidad 
-        }
-        const clone = templateCards.cloneNode(true)
-        fragment.appendChild(clone)
-
-    });
-    
-    
-    items.appendChild(fragment)
-}
+//Con esta funcion vacio el carro.  es llamada por btnVaciarCarrito 
 const vaciar = () =>{
     carrito.splice(0,carrito.length)
     pintarCarrito(carrito)
@@ -266,4 +260,18 @@ const vaciar = () =>{
         resetCant.carrito = 0
     }
     pintar(productos)
+}
+const estadoPintar = () =>{
+    if(estado === 2){   
+        filtroColumnas()  //Si entra en esta funcion es que estoy en el filtro de columnas, por lo que agrego al carro y refresco solo las cards columnas
+     }
+     else if(estado === 3){
+        filtroAccesorio() //Si entra en esta funcion es que estoy en el filtro de accesorio, por lo que agrego al carro y refresco solo las cards accesorio
+     }
+     else if(estado === 4){
+        buscarProducto() //Si entra en esta funcion es que estoy en el filtro de busquede de usuario, por lo que agrego al carro y refresco solo las cards de lo que busco el usuario
+     }
+     else{
+        pintar(productos) // refresco todas las cards despues de agregar al carrito
+     }  
 }

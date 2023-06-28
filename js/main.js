@@ -14,8 +14,8 @@ const buscarProductos = document.querySelector(".buscarProductos")
 const fragment = document.createDocumentFragment()
 const productos = []
 const carrito = []
-let estado = 0   // 1- Listar 2-FiltroColumna 3-FiltroAccesorio 4-Buscar  //lo aplico para cuando estoy en un filtro poder agregar sin refrescar todas las cards
-                                                                                //es mas que nada para saber donde estoy parado y que refrescar
+let estado = 0   // 1- Listar 2-FiltroColumna 3-FiltroAccesorio 4-Buscar  //lo aplico para refrescar solo el lugar donde estoy parado 
+                                                                          //ej: si estoy sobre el filtro columnas refrescar solo las columnas
 
 //cargo los datos del json que lo tengo en una pagina aparte
 const fetchdata = async() => {

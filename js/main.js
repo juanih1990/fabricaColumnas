@@ -29,20 +29,29 @@ const fetchdata = async() => {
 }
 //comienzo cargando el json en un objeto. para poder usarlo a gusto
 const pintCards = data => {
-    data.forEach(producto => {    //Cargo todos los datos en un objeto productos
-        productos.push({
-            id: producto.id,
-            producto : producto.producto.toUpperCase(),
-            precio : producto.precio,
-            imgUrl: producto.imgUrl,
-            tipo: producto.tipo,  
-            carrito: producto.carrito//
-        })
-    });
-
-    pintar(productos)
-   
-      
+    let storageGetProducto = localStorage.getItem("storageProducto")
+    let objetoStorageProducto = JSON.parse(storageGetProducto)
+    if(objetoStorageProducto == null){
+        data.forEach(producto => {    //Cargo todos los datos en un objeto productos que viene de la json si es que no hay datos en memoria
+            productos.push({
+                id: producto.id,
+                producto : producto.producto.toUpperCase(),
+                precio : producto.precio,
+                imgUrl: producto.imgUrl,
+                tipo: producto.tipo,  
+                carrito: producto.carrito//
+            })
+        });
+    }
+    else{
+            recuperoStorageProductos()
+            recuperoStorageCarrito()
+            pintarCarrito(carrito)
+            pintarFooter(carrito) 
+      //  console.log(recuperoStorageCarrito())
+    }     
+            pintar(productos)
+            //pintar(carrito)
 }
 
 //Eventos.
@@ -93,6 +102,12 @@ buscarProductos.addEventListener('click',e =>{
 
 //pinto el array en las cards     
 const pintar = (array) => {
+    //si es distinto de null el storage tengo q cargarlo en producto.
+   // let storageGetProducto = localStorage.getItem("storageProducto")
+   // let  storageGetCarrito = localStorage.getItem("storageCarrito")  
+   // console.log(storageGetCarrito)
+   // console.log(storageGetProducto)
+
     items.innerHTML=""
     array.forEach(producto => {
         templateCards.querySelector('h5').textContent = producto.producto
@@ -108,10 +123,7 @@ const pintar = (array) => {
         }
         const clone = templateCards.cloneNode(true)
         fragment.appendChild(clone)
-
     });
-    
-    
     items.appendChild(fragment)
 }
 //pinto el carrito en la tabla
@@ -168,6 +180,9 @@ const agregarCarrito = e =>{
                 )
                  
          }
+
+         guardarStorage()
+
          estadoPintar()
          pintarCarrito(carrito) //repinto el carro
          pintarFooter(carrito) // repinto el footerS
@@ -210,6 +225,8 @@ const btnaccion = e => {
            fragment.appendChild(clone)
            presupuesto.appendChild(fragment)
         }
+        guardarStorage()
+
         estadoPintar()
         pintarCarrito(carrito)
         pintarFooter(carrito) 
@@ -259,6 +276,7 @@ const vaciar = () =>{
     for (const resetCant of productos) {
         resetCant.carrito = 0
     }
+    localStorage.clear()
     pintar(productos)
 }
 const estadoPintar = () =>{
@@ -274,4 +292,40 @@ const estadoPintar = () =>{
      else{
         pintar(productos) // refresco todas las cards despues de agregar al carrito
      }  
+}
+
+//FUNCIONES PARA RECUPARAR Y GUARDAR EN STORAGE; 
+function recuperoStorageProductos(){
+    let storageGetProducto = localStorage.getItem("storageProducto")   //recupero los datos y los guardo en productos para trabajarlos normal
+    let objetoStorageProducto = JSON.parse(storageGetProducto)
+    objetoStorageProducto.forEach(producto => {    // Si hay datos en el storage los guardo en el objeto productos
+        productos.push({
+            id: producto.id,
+            producto : producto.producto.toUpperCase(),
+            precio : producto.precio,
+            imgUrl: producto.imgUrl,
+            tipo: producto.tipo,  
+            carrito: producto.carrito//
+        })
+    })
+}
+function recuperoStorageCarrito(){
+    let storageGetCarrito = localStorage.getItem("storageCarrito") //recupero los datos y los guardo en carrito para trabajarlos normal
+    let objetoStorageCarrito = JSON.parse(storageGetCarrito)
+    objetoStorageCarrito.forEach(carro =>{
+        carrito.push(
+            {
+                id: carro.id,
+                producto: carro.producto,
+                cantidad: carro.cantidad,
+                precio: carro.precio              
+            })
+    })
+}
+function guardarStorage(){
+  //Guardo el carrito y el producto en el storage. 
+  let storageProducto = JSON.stringify(productos)
+  localStorage.setItem("storageProducto",storageProducto)
+  let storageCarrito = JSON.stringify(carrito)
+  localStorage.setItem("storageCarrito",storageCarrito)
 }

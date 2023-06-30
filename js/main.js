@@ -97,6 +97,7 @@ listarProductos.addEventListener('click', e =>{
 })
 buscarProductos.addEventListener('click',e =>{
     buscarProducto(e)
+    e.stopPropagation()
 })
 
 //FUNCIONES
@@ -255,10 +256,10 @@ const listaProductos = () =>{
 }
 //Busco los productos del array de objetos
 const buscarProducto = () =>{
-    items.innerHTML=""
     estado = 4
-    let productoAbuscar = document.querySelector(".productoAbuscar").value
-    const productosBuscados = productos.filter(filtrado => filtrado.producto.includes(productoAbuscar.toUpperCase()))
+    items.innerHTML=""
+    let productoAbuscar = document.querySelector(".productoAbuscar").value.toUpperCase()
+    const productosBuscados = productos.filter(filtrado => filtrado.producto.includes(productoAbuscar))
     pintar(productosBuscados)
    
 }

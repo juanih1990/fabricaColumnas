@@ -123,6 +123,9 @@ body._questions-BGcolor {
     margin-left: 25%;
     text-align: center;
   }
+  section table {
+    margin: 50px;
+  }
   section.mleft {
     margin-left: 5%;
   }
@@ -166,6 +169,19 @@ body._questions-BGcolor {
     background-repeat: no-repeat;
     height: 500px;
     margin-bottom: 10%;
+  }
+  section div p.cant-Card {
+    background: rgb(16, 102, 54);
+    width: 29px;
+    height: 25px;
+    border-radius: 100%;
+    color: rgb(253, 253, 253);
+    display: inline-block;
+    margin-left: 25%;
+    text-align: center;
+  }
+  section table {
+    flex-wrap: wrap;
   }
   section._contactanos-Contenedor {
     height: 95vh;

@@ -83,6 +83,7 @@ enviarPresupuesto.addEventListener('click',e =>{
                 resetCant.carrito = 0
         }
             pintar(productos)  
+            vaciar()
     }
 })
 filtrarColumnas.addEventListener('click', e =>{
@@ -98,7 +99,7 @@ buscarProductos.addEventListener('click',e =>{
     buscarProducto(e)
 })
 
-//funciones
+//FUNCIONES
 
 //pinto el array en las cards     
 const pintar = (array) => {
@@ -107,14 +108,14 @@ const pintar = (array) => {
    // let  storageGetCarrito = localStorage.getItem("storageCarrito")  
    // console.log(storageGetCarrito)
    // console.log(storageGetProducto)
-
+    
     items.innerHTML=""
-    array.forEach(producto => {
-        templateCards.querySelector('h5').textContent = producto.producto
-        templateCards.querySelector('span').textContent = producto.precio
-        templateCards.getElementById('imgCard').setAttribute("src",producto.imgUrl)
-        templateCards.querySelector('.btn-dark').dataset.id = producto.id
-        templateCards.querySelector('.cant-Card').textContent = producto.carrito
+    array.forEach(({producto,precio,imgUrl,id,carrito}) => {  //use el desestructurar el objeto por q lo solicitaba la entrega
+        templateCards.querySelector('h5').textContent = producto
+        templateCards.querySelector('span').textContent = precio
+        templateCards.getElementById('imgCard').setAttribute("src",imgUrl)
+        templateCards.querySelector('.btn-dark').dataset.id = id
+        templateCards.querySelector('.cant-Card').textContent = carrito
         if(templateCards.querySelector('.cant-Card').textContent == 0){
             templateCards.querySelector('.cant-Card').style.display = "none";  //si es cero le pongo display none por cuestion estetica
         }
@@ -175,20 +176,15 @@ const agregarCarrito = e =>{
                         producto: objeto.querySelector('.card-producto').textContent,
                         cantidad: 1,
                         precio: objeto.querySelector('.Precio').textContent               
-                    }
-                 
-                )
-                 
+                    }              
+                )               
          }
-
          guardarStorage()
-
          estadoPintar()
          pintarCarrito(carrito) //repinto el carro
          pintarFooter(carrito) // repinto el footerS
         
-    }
-    
+    } 
     e.stopPropagation()
 }
 //funciones de los botones + y - de la tabla, con la que agrego o saco elementos, lo mismo son descontados tambien de las cars en el section principal
@@ -252,7 +248,7 @@ const filtroAccesorio = () =>{
     const productoFiltrado = productos.filter(filtrado  => filtrado.tipo.includes("Accesorio"))
     pintar(productoFiltrado)
 }
-//Lo unico que hace es llamar a la funcion pintar() y me vuelve a listar los productos cuando doy click en su respectivo boton
+//llama a la funcion pintar() y me vuelve a listar los productos cuando doy click en su respectivo boton
 const listaProductos = () =>{
     estado = 1
     pintar(productos)
@@ -294,31 +290,32 @@ const estadoPintar = () =>{
      }  
 }
 
-//FUNCIONES PARA RECUPARAR Y GUARDAR EN STORAGE; 
+
+//STORAGE; 
 function recuperoStorageProductos(){
     let storageGetProducto = localStorage.getItem("storageProducto")   //recupero los datos y los guardo en productos para trabajarlos normal
     let objetoStorageProducto = JSON.parse(storageGetProducto)
-    objetoStorageProducto.forEach(producto => {    // Si hay datos en el storage los guardo en el objeto productos
+    objetoStorageProducto.forEach(({id,producto,precio,imgUrl,tipo,carrito}) => {    // Si hay datos en el storage los guardo en el objeto productos
         productos.push({
-            id: producto.id,
-            producto : producto.producto.toUpperCase(),
-            precio : producto.precio,
-            imgUrl: producto.imgUrl,
-            tipo: producto.tipo,  
-            carrito: producto.carrito//
+            id: id,
+            producto : producto.toUpperCase(),
+            precio : precio,
+            imgUrl: imgUrl,
+            tipo: tipo,  
+            carrito: carrito//
         })
     })
 }
 function recuperoStorageCarrito(){
     let storageGetCarrito = localStorage.getItem("storageCarrito") //recupero los datos y los guardo en carrito para trabajarlos normal
     let objetoStorageCarrito = JSON.parse(storageGetCarrito)
-    objetoStorageCarrito.forEach(carro =>{
+    objetoStorageCarrito.forEach(({id,producto,cantidad,precio}) =>{
         carrito.push(
             {
-                id: carro.id,
-                producto: carro.producto,
-                cantidad: carro.cantidad,
-                precio: carro.precio              
+                id: id,
+                producto: producto,
+                cantidad: cantidad,
+                precio: precio              
             })
     })
 }

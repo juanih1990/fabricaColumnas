@@ -37,6 +37,9 @@ body._questions-BGcolor {
     transform: scale(1.2, 1.2);
     color: rgb(153, 155, 32) !important;
   }
+  nav.mleftNav {
+    margin-left: 4%;
+  }
 }
 @media (min-width: 780px) {
   header div {
@@ -179,9 +182,6 @@ body._questions-BGcolor {
     display: inline-block;
     margin-left: 25%;
     text-align: center;
-  }
-  section table {
-    flex-wrap: wrap;
   }
   section._contactanos-Contenedor {
     height: 95vh;

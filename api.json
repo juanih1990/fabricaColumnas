@@ -67,7 +67,7 @@
       "precio": 16000,
       "id": 9,
       "producto": "mensula Doble Terminal",
-      "imgUrl": "../img/Ménsula-Doble-Terminal.png",
+      "imgUrl": "../img/Ménsula-Doble-Terminal.webp",
       "tipo" : "Accesorio",
       "carrito" : 0
     },

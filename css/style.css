@@ -116,7 +116,7 @@ body._questions-BGcolor {
   section div div p {
     color: rgb(67, 121, 67);
   }
-  section div p.cant-Card {
+  section div.cant-Card {
     background: rgb(16, 102, 54);
     width: 29px;
     height: 25px;

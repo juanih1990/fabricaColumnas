@@ -121,9 +121,11 @@ const pintar = (array) => {
         templateCards.querySelector('.cant-Card').textContent = carrito
         if(templateCards.querySelector('.cant-Card').textContent == 0){
             templateCards.querySelector('.cant-Card').style.display = "none";  //si es cero le pongo display none por cuestion estetica
+            templateCards.querySelector('svg').style.display = "none";
         }
         else{
             templateCards.querySelector('.cant-Card').style.display = "inline-block"; //si es mayor a cero permito ver el contenido de la cantidad 
+            templateCards.querySelector('svg').style.display = "inline-block";
         }
         const clone = templateCards.cloneNode(true)
         fragment.appendChild(clone)

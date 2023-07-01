@@ -11,6 +11,7 @@ const listarProductos = document.querySelector('.listarProductos')
 const filtrarColumnas = document.querySelector(".filtrarColumnas")
 const filtrarAccesorios = document.querySelector(".filtrarAccessorios")
 const buscarProductos = document.getElementById('buscarProductos')
+const inputBuscarProducto = document.getElementById('productoAbuscar')
 const fragment = document.createDocumentFragment()
 const productos = []
 const carrito = []
@@ -97,6 +98,14 @@ listarProductos.addEventListener('click', e =>{
 })
 buscarProductos.addEventListener('click', () =>{
    buscarProducto()
+})
+inputBuscarProducto.addEventListener('keypress',e =>{
+    let key = Number(e.keyCode)
+    if(key === 13){
+        e.preventDefault()
+        buscarProducto()
+    }
+    e.stopPropagation()
 })
 
 //FUNCIONES

@@ -10,7 +10,7 @@ const presupuesto = document.getElementById('presupuesto')
 const listarProductos = document.querySelector('.listarProductos')
 const filtrarColumnas = document.querySelector(".filtrarColumnas")
 const filtrarAccesorios = document.querySelector(".filtrarAccessorios")
-const buscarProductos = document.querySelector(".buscarProductos")
+const buscarProductos = document.getElementById('buscarProductos')
 const fragment = document.createDocumentFragment()
 const productos = []
 const carrito = []
@@ -95,21 +95,14 @@ filtrarAccesorios.addEventListener('click',e => {
 listarProductos.addEventListener('click', e =>{
     listaProductos(e)
 })
-buscarProductos.addEventListener('click',e =>{
-    buscarProducto(e)
-    e.stopPropagation()
+buscarProductos.addEventListener('click', () =>{
+   buscarProducto()
 })
 
 //FUNCIONES
 
 //pinto el array en las cards     
 const pintar = (array) => {
-    //si es distinto de null el storage tengo q cargarlo en producto.
-   // let storageGetProducto = localStorage.getItem("storageProducto")
-   // let  storageGetCarrito = localStorage.getItem("storageCarrito")  
-   // console.log(storageGetCarrito)
-   // console.log(storageGetProducto)
-    
     items.innerHTML=""
     array.forEach(({producto,precio,imgUrl,id,carrito}) => {  //use el desestructurar el objeto por q lo solicitaba la entrega
         templateCards.querySelector('h5').textContent = producto
@@ -227,7 +220,7 @@ const btnaccion = e => {
         estadoPintar()
         pintarCarrito(carrito)
         pintarFooter(carrito) 
-        e.stopPropagation(e)
+        e.stopPropagation()
 }
 //Vacio la planilla de presupuesto completa con un boton. Tambien puedo vaciar item a item. con el  btn " - " de la tabla
 const btnVaciarCarrito = e => {
@@ -256,12 +249,12 @@ const listaProductos = () =>{
 }
 //Busco los productos del array de objetos
 const buscarProducto = () =>{
-    estado = 4
-    items.innerHTML=""
-    let productoAbuscar = document.querySelector(".productoAbuscar").value.toUpperCase()
-    const productosBuscados = productos.filter(filtrado => filtrado.producto.includes(productoAbuscar))
-    pintar(productosBuscados)
-   
+    estado = 4 
+   // items.innerHTML = ""
+    let InputBuscar = document.getElementById('productoAbuscar').value.toUpperCase()
+    const busqueda = productos.filter(fil  => fil.producto.toUpperCase().includes(InputBuscar))
+    console.log(busqueda)
+    pintar(busqueda) 
 }
 //Con esta funcion vacio el carro.  es llamada por btnVaciarCarrito 
 const vaciar = () =>{

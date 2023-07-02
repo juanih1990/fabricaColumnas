@@ -264,8 +264,9 @@ const buscarProducto = () =>{
    // items.innerHTML = ""
     let InputBuscar = document.getElementById('productoAbuscar').value.toUpperCase()
     const busqueda = productos.filter(fil  => fil.producto.toUpperCase().includes(InputBuscar))
-    console.log(busqueda)
+    document.getElementById('productoAbuscar').value = ""  //limpio el campo de texto para q el usuario pueda realizar una nueva busqueda
     pintar(busqueda) 
+   
 }
 //Con esta funcion vacio el carro.  es llamada por btnVaciarCarrito 
 const vaciar = () =>{

@@ -81,14 +81,14 @@ body._questions-BGcolor {
     margin-left: 2%;
   }
   section div._Card-Img2 {
-    background-image: url(../img/Torción21.png);
+    background-image: url(../img/Torción.webp);
     background-size: cover;
     background-repeat: no-repeat;
     height: 600px;
     margin: 5%;
   }
   section div._Card-Img3 {
-    background-image: url(../img/25aa.png);
+    background-image: url(../img/25a.webp);
     background-size: cover;
     background-repeat: no-repeat;
     height: 600px;
@@ -160,20 +160,20 @@ body._questions-BGcolor {
     background-image: url(../img/molde.webp);
   }
   section div._Card-Img2 {
-    background-image: url(../img/Torción21.png);
+    background-image: url(../img/Torción.webp);
     background-size: cover;
     background-repeat: no-repeat;
     height: 500px;
     margin: 10% 0%;
   }
   section div._Card-Img3 {
-    background-image: url(../img/25aa.png);
+    background-image: url(../img/25a.webp);
     background-size: cover;
     background-repeat: no-repeat;
     height: 500px;
     margin-bottom: 10%;
   }
-  section div p.cant-Card {
+  section div.cant-Card {
     background: rgb(16, 102, 54);
     width: 29px;
     height: 25px;

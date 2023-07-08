@@ -181,13 +181,15 @@ const agregarCarrito = e => {
             carrito[position].cantidad++
         }
         else {
+            let position = productos.findIndex((index) => index.id == ids)
             carrito.push(
                 {
                     id: ids,
-                    producto: objeto.querySelector('.card-producto').textContent,
+                    producto: productos[position].producto,
                     cantidad: 1,
-                    precio: objeto.querySelector('.Precio').textContent
-                }
+                    precio: productos[position].precio
+                    
+                }        
             )
         }
         guardarStorage()
@@ -282,7 +284,7 @@ const vaciar = () => {
                          <th scope="row" colspan="5">Arma tu pedido ... !</th>
                          </tr>`
     for (const resetCant of productos) {
-        resetCant.carrito = 0
+        resetCant.carrito = 0    
     }
     localStorage.clear()
     pintar(productos)
